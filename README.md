@@ -1,3 +1,7 @@
+<p align="center">
+  <img height="125px" src="assets/images/logo.png">
+</p>
+
 # Riot
 
 Riot is a fast and open-source chat client.
@@ -7,4 +11,4 @@ Riot is a fast and open-source chat client.
 For a full, detailed documentation about Riot and its core components can be found on our [developer portal](https://riotchat.gq/developers).
 
 ## License
-[Apache License 2.0](https://choosealicense.com/licenses/apache-2.0/)
+Riot is licensed under the [Apache License 2.0](/LICENSE)
