@@ -6,6 +6,8 @@ import { apiRouter } from './routes/api-router';
 import { pagesRouter } from './routes/pages-router';
 import { staticsRouter } from './routes/statics-router';
 
+import { Helmet } from "react-helmet";
+
 console.log(`The App version is ${getVersion()}`);
 
 const app = express();

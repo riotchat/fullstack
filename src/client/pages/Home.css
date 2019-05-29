@@ -1,0 +1,804 @@
+/* ---------------------- Font Import ---------------------- */
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: white;
+    background-color: rebeccapurple;
+}
+
+/* ---------------------- Styling ---------------------- */
+
+h1 {
+    font-size: 30px;
+    margin: 7px 0;
+}
+
+.pro-title {
+    font-size: 48px;
+}
+
+h2 { /* Features Title */
+    margin: 5px 0;
+    font-size: 30px;
+}
+
+h3 { /* Footer Menu Title */
+    margin: 10px 0;
+    user-select: none;
+}
+
+a { /* Links */
+    color: grey;
+}
+
+form {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+input {
+    font-family: "Open Sans", sans-serif;
+    user-select: none;
+}
+
+.icon {
+    /*width: 50px;*/
+    margin: 0 20px 0 10px;
+    font-size: 28px;
+    vertical-align: middle;
+}
+
+hr {
+    width: 242px;
+    margin-right: 0;
+    text-align: right;
+    border: .5px solid darkgrey;
+    opacity: .5;
+}
+
+.riot {
+    font-family: "VX Rocket", sans-serif;
+    font-size: 24px;
+}
+
+.pro-title {
+    font-size: 60px;
+    font-family: "VX Rocket", sans-serif;
+}
+
+.pro-title .pro { /* Riot PRO Text */
+    margin-left: 12px;
+    font-size: 48px;
+    font-family: "Pro", sans-serif;
+    font-style: italic;
+    color: white;
+    /*text-align: center;*/
+    /*background: -webkit-linear-gradient(#9987F5, #EA86F3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;*/
+}
+
+.disclaimer { /* Copyright disclaimer */
+    color: lightgrey;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.new { /* Tag for buttons */
+    color: mediumpurple;
+    background: white;
+    margin-left: 5px;
+    padding: 2px 5px;
+    font-size: 10px;
+    border-radius: 60px;
+}
+
+/* ---------------------- Header ---------------------- */
+
+header {
+    position: relative;
+    height: 800px;
+    background-image: url("/assets/images/header.png");
+    background-size: cover;
+    /*background-position: center;*/
+    background-repeat: no-repeat;
+}
+
+.header {
+    /*height: 800px;*/
+    display: flex;
+    margin: 0 auto;
+    /*justify-content: center;
+    align-self: center;*/
+    vertical-align: middle;
+    max-width: 1400px;
+}
+
+.header-info {
+    /*margin: 10px;*/
+    /*padding: 170px 10px 0 10px;*/
+    color: white;
+    /*position: absolute;*/
+    /*margin: 100px auto;*/
+    user-select: none;
+}
+
+header .text h1 {
+    margin: 0;
+}
+
+header .text p {
+    margin: 0 0 100px 0;
+}
+
+/* ---------------------- Navbar ---------------------- */
+
+nav {
+    height: 70px;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0));
+    width: 100%;
+    /*position: sticky;
+    position: -webkit-sticky;*/
+    position: fixed;
+    top: 0;
+    z-index: 10;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+}
+
+nav li a {
+    line-height: 70px;
+    height: 70px;
+    display: block;
+    padding: 0 20px;
+    text-decoration: none;
+    color: white;
+    overflow: hidden;
+    user-select: none;
+    transition: .3s;
+    background: mediumpurple;
+}
+
+nav ul li ul {
+    position: absolute;
+    display: block;
+}
+
+nav li a:hover,
+nav .menu-btn:hover {
+  color: darkgrey;
+}
+
+/*nav li a.active {
+  background-color: grey;
+}*/
+
+
+
+/* -- Menu -- */
+
+nav .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height .2s ease-out;
+}
+
+/*nav .menu-btn:checked ~ nav .logo {
+    background-color: blue;
+}*/
+
+/* -- Icon -- */
+
+nav .menu-icon {
+  display: block;
+  float: right;
+  padding: 34px 20px;
+  position: relative;
+  user-select: none;
+}
+
+nav .menu-icon .navicon {
+  background: white;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 18px;
+}
+
+nav .menu-icon .navicon:before,
+nav .menu-icon .navicon:after {
+  background: white;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+
+nav .menu-icon .navicon:before {
+  top: 5px;
+}
+
+nav .menu-icon .navicon:after {
+  top: -5px;
+}
+
+/* -- Menu Button -- */
+
+nav .menu-btn {
+  display: none;
+}
+
+nav .menu-btn:checked ~ .menu {
+  max-height: 300px;
+}
+
+nav .menu-btn:checked ~ nav {
+  background-color: red;
+}
+
+nav .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+nav .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+nav .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+nav .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+nav .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+
+/* 48em = 768px */
+
+@media (min-width: 1024px) {
+    
+    nav {
+    height: 100px;
+    width: 100%;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    z-index: 10;
+}
+
+  nav li {
+      /*margin: 0 100px;*/
+    float: left;
+  }
+
+  nav li a {
+    padding: 0 20px;
+    line-height: 100px;
+    height: 100px;
+      background: transparent;
+  }
+    
+    
+
+  nav .menu {
+      margin: 0 100px 0 0;
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+
+  nav .menu-icon {
+    display: none;
+  }
+}
+
+/* ------------ Background ------------ */
+
+.background {
+    /*position: relative;*/
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background-image: url("/assets/images/header.png");
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+    z-index: -2;
+}
+
+.opacity-layer { /* Opacity over background */
+    background-color: rgba(0,0,0,0.3);
+}
+
+section {
+    /*height: 100%;*/
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-color: dimgrey;
+    /*margin: 100px 0;*/
+}
+
+section:nth-last-child(odd) { /* Shadow on last section */
+    box-shadow: 0px 9px 20px -18px rgba(0,0,0,0.75);
+}
+
+/*.opacity-layer {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,0.5);
+}*/
+
+.content {
+    position: relative;
+    margin: 0 auto;
+    padding: 100px 0;
+    max-width: 1400px;
+}
+
+.content-wrap {
+    display: flex;
+}
+
+.content-image {
+    margin: auto;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.hook {
+    margin: 20px;
+    flex-direction: column;
+    align-self: center;
+}
+
+.more { /* Learn More Buttons */
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    transition: .5s;
+    user-select: none;
+}
+
+.more:hover {
+    color: lightgrey;
+}
+
+.more::after {
+    content: " \203A";
+}
+
+section#pro {
+    background: linear-gradient(#9987F5, #EA86F3)
+}
+
+.price-table {
+    display: flex;
+    /*flex-direction: row;*/
+    margin: auto;
+    width: 100%;
+    text-align: center;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    color: black;
+}
+
+.column {
+    flex: 25%;
+    padding: 20px;
+    max-width: 340px;
+}
+
+.table {
+    /* remove height later */
+    height: 508px;
+    padding: 0 0 40px 0;
+    border-radius: 20px;
+    background: white;
+}
+
+.table ul {
+    margin: 20px 0;
+    padding: 0;
+}
+
+.table ul li {
+    padding: 5px 0;
+    font-size: 14px;
+    list-style: none;
+    text-align: left;
+}
+
+#pro-table {
+    transform: scale(1.08);
+    box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.45);
+}
+
+.title { /* Price Table Title */
+    color: white;
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+    margin: 10px;
+    font-size: 24px;
+    font-family: "VX Rocket", sans-serif;
+}
+
+.title span {
+    margin-left: 5px;
+    vertical-align: middle;
+    font-size: 20px;
+    font-family: "Dubtronic Inline", sans-serif;
+    font-style: italic;
+}
+
+#free-price {
+    font-family: "Open Sans", sans-serif;
+}
+
+.pro-text { /* Riot PRO Text */
+    font-family: "Dubtronic Inline", sans-serif;
+}
+
+.bkg {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    /*margin-bottom: 20px;*/
+    z-index: 1;
+    user-select: none;
+}
+
+.bkg .opacity {
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 200px;
+    background: rgba(0,0,0,0.25);
+    z-index: 0;
+}
+
+.bkg img {
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /*box-shadow: 0 4px 2px 0px rgba(0,0,0,0.55);*/
+}
+
+.price {
+    color: white;
+    /*width: 100%;*/
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    margin: 20px;
+    font-size: 48px;
+    font-weight: 600;
+}
+
+.sub { /* Subtext under price */
+    color: white;
+    position: absolute;
+    top: 75px;
+    right: 0;
+    z-index: 2;
+    margin: 0 20px;
+    font-size: 16px;
+}
+
+#btn {
+    margin: 10px 0;
+}
+
+.button { /* Button */
+    display: inline-block;
+    color: white;
+    margin: 10px;
+    padding: 15px 50px;
+    background-color: grey;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 60px;
+    font-size: 16px;
+    user-select: none;
+}
+
+.button:hover {
+    background-color: mediumpurple;
+}
+
+.button:active {
+    background-color: mediumslateblue;
+}
+
+.btn-purple { /* Button */
+    display: inline-block;
+    color: white;
+    margin: 10px;
+    padding: 15px 50px;
+    background-color: mediumslateblue;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 60px;
+    font-size: 16px;
+    transition: .5s;
+    user-select: none;
+}
+
+.btn-purple:hover {
+    background: #8A7BED;
+}
+
+.btn-purple:active {
+    background: #6859CC;
+}
+
+/* ---------------------- Riot PRO Price Table ---------------------- */
+
+
+img {
+  /*display: block;*/
+  height: auto;
+  max-width: 100%;
+    user-select: none;
+}
+
+/* ---------------------- Riot PRO ---------------------- */
+
+.features {
+    background-color: dimgrey;
+}
+
+.features-text {
+    margin: 0 auto;
+    padding: 100px 10px 0 10px;
+    max-width: 1400px;
+}
+
+.features-text h2 {
+    margin: 0;
+    font-size: 40px;
+}
+
+.perks {
+    margin: 0 auto;
+    padding: 50px 10px 100px 10px;
+    max-width: 1400px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1em;
+    /*background: rgba(0,0,0,0.5)*/
+}
+
+.perk {
+    padding: 1em;
+    cursor: pointer;
+    /*transition: .5s;*/
+    /*border-all: 1px solid white;*/
+}
+
+.wrappah {
+    margin: 0 auto;
+    max-width: 1400px;
+    padding: 50px 10px 100px 10px;
+}
+
+.screenshots {
+    /*max-width: 1400px;
+    text-align: left;*/
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: minmax(100px, auto);
+    grid-gap: 1em;
+    justify-items: stretch;
+    /*align-items: stretch;*/
+}
+
+.box {
+    padding: 20px;
+    background: black;
+    border-radius: 30px;
+}
+
+
+.box0 {
+    margin: auto;
+    grid-column: 1/3;
+    grid-row: 1/5;
+    order: 6;
+}
+
+/*.perk:nth-child(odd) {
+    background: grey;
+}*/
+
+/* ---------------------- Inputs ---------------------- */
+
+input[type=email] {
+    width: calc(100% - 90px);
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    border-bottom-left-radius: 60px;
+    border-top-left-radius: 60px;
+}
+
+input[type=email]:focus {
+    outline: 0;
+    box-shadow: 0 0 0 3px rgba(123, 104, 238, 0.7);
+}
+
+
+input[type=submit] {
+    display: inline-block;
+    color: white;
+    margin: 8px 0;
+    padding: 16px 20px;
+    background: mediumslateblue;
+    cursor: pointer;
+    border: none;
+    border-top-right-radius: 60px;
+    border-bottom-right-radius: 60px;
+    transition: .5s;
+    user-select: none;
+}
+
+input[type=submit]:hover {
+    background: #8A7BED;
+}
+
+input[type=submit]:active {
+    background: #6859CC;
+}
+
+/* ---------------------- Footer ---------------------- */
+
+footer {
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.footer-wrapper {
+    width: 100%;
+    padding: 25px;
+    display: grid;
+    float: right;
+    text-align: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    align-items: flex-start;
+}
+
+.footer-logo {
+    margin: 20px;
+    text-align: left;
+    user-select: none;
+    align-self: center;
+}
+
+.social {
+    text-align: left;
+    margin: 20px 0;
+    align-self: center;
+    user-select: none;
+}
+
+.social a {
+    margin: 10px;
+    transition: .5s;
+}
+
+.social a:hover {
+    opacity: .7;
+}
+
+.copyright {
+    color: lightgrey;
+    font-size: 12px;
+}
+
+.footer-menu {
+    margin: 0;
+    padding: 10px;
+    text-align: left;
+    list-style: none;
+}
+
+footer ul {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    list-style: none;
+}
+
+footer ul li {
+    margin: 4px 0;
+}
+
+footer ul li a {
+    color: lightgrey;
+    font-size: 14px;
+    text-decoration: none;
+    user-select: none;
+}
+
+@media only screen and (max-width: 1024px) {
+    
+    h1 {
+        font-size: 45px;
+    }
+    
+    #pro-table {
+        transform: none;
+        box-shadow: none;
+    }
+    
+    .price-table {
+        justify-content: center;
+    }
+    
+    .content-wrap {
+        display: block;
+    }
+    
+    .footer-wrapper {
+        /*display: block;*/
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .footer-logo {
+        display: block;
+    }
+    
+    .social {
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 48em) {
+    
+    #btn {
+        width: 100%;
+    }
+    
+    header {
+        height: 100vh;
+    }
+    
+    /*.button {
+        width: 100%;
+    }*/
+    
+    .perks {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media only screen and (max-width: 36em) {
+    .perks {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
