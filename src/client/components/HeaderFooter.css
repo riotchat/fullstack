@@ -1,0 +1,132 @@
+/* -- Logo -- */
+
+.logo {
+    font-size: 48px;
+    font-family: "VX Rocket", sans-serif;
+    margin: auto 0;
+}
+
+nav .logo {
+    line-height: 70px;
+    height: 70px;
+    display: block;
+    float: left;
+    font-size: 24px;
+    margin: 0 20px;
+    color: white;
+    text-decoration: none;
+    font-family: "VX Rocket", sans-serif;
+    font-weight: normal;
+    user-select: none;
+    opacity: 1;
+    transition: .3s;
+}
+
+nav .logo:hover {
+    opacity: 0.7;
+}
+
+@media (min-width: 1024px) {
+    nav .logo {
+        line-height: 100px;
+        height: 100px;
+        display: block;
+        float: left;
+        font-size: 40px;
+        margin: 0 0 0 100px;
+        color: white;
+        text-decoration: none;
+        font-weight: normal;
+        user-select: none;
+        opacity: 1;
+        transition: .3s;
+    }
+}
+
+footer {
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+footer h3 { /* Footer Menu Title */
+    margin: 10px 0;
+    user-select: none;
+}
+
+.footer-wrapper {
+    width: 100%;
+    padding: 25px;
+    display: grid;
+    float: right;
+    text-align: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    align-items: flex-start;
+}
+
+.footer-logo {
+    margin: 20px;
+    text-align: left;
+    user-select: none;
+    align-self: center;
+}
+
+.copyright {
+    color: lightgrey;
+    font-size: 12px;
+}
+
+.footer-menu {
+    margin: 0;
+    padding: 10px;
+    text-align: left;
+    list-style: none;
+}
+
+footer ul {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    list-style: none;
+}
+
+footer ul li {
+    margin: 4px 0;
+}
+
+footer ul li a {
+    color: lightgrey;
+    font-size: 14px;
+    text-decoration: none;
+    user-select: none;
+}
+
+.social {
+    text-align: left;
+    margin: 20px 0;
+    align-self: center;
+    user-select: none;
+}
+
+.social a {
+    margin: 10px;
+    transition: .5s;
+}
+
+.social a:hover {
+    opacity: .7;
+}
+
+@media only screen and (max-width: 1024px) {    
+    .footer-wrapper {
+        /*display: block;*/
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .footer-logo {
+        display: block;
+    }
+    
+    .social {
+        display: block;
+    }
+}
