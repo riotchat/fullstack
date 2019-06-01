@@ -8,11 +8,9 @@ import { Home } from './pages/Home';
 console.log(`The App version is ${getVersion()}`);
 
 const AppImpl = () => (
-    <BrowserRouter>
-        <Switch>
-            <Route exact path='/' component={Home} />
-        </Switch>
-    </BrowserRouter>
+    <Switch>
+        <Route exact path='/' component={Home} />
+    </Switch>
 );
 
 export const App = hot(module)(AppImpl);

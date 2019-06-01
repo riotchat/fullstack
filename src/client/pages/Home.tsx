@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 import { Content, ContentOpacityLayer } from '../components/Content';
 import { Footer } from '../components/HeaderFooter';
@@ -23,15 +23,15 @@ export const Home: React.FunctionComponent = () => (
                         <span className={css.navicon}></span>
                     </label>
                     <ul className={css.menu}>
-                        <li><Link to="/" className={css.active}>Home</Link></li>
-                        <li><a href="/blog">Blog</a></li>
-                        <li><a href="/developers">Developers</a></li>
+                        <li><NavLink to="/" exact activeClassName={css.active}>Home</NavLink></li>
+                        <li><NavLink to="/blog" activeClassName={css.active}>Blog</NavLink></li>
+                        <li><NavLink to="/developers" activeClassName={css.active}>Developers</NavLink></li>
                         {/* <ul>
                             <li><a href="x">Get Started</a></li>
                             <li><a href="x">Developer Portal</a></li>
                             <li><a href="x">Open Source</a></li>
                         </ul> */}
-                        <li><a className={css.download} href="/download">Download</a></li>
+                        <li><NavLink activeClassName={css.download} to="/download">Download</NavLink></li>
                     </ul>
                 </nav>
                 <div className={css.header}>
