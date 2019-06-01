@@ -80,7 +80,6 @@ module.exports = {
   plugins,
   externals: {
     react: 'React',
-    'react-dom': 'ReactDOM',
-    'react-helmet': 'Helmet'
+    'react-dom': 'ReactDOM'
   },
 };
