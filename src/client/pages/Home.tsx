@@ -87,9 +87,9 @@ export const Home: React.FunctionComponent = () => (
                     <p>There's more to it than just code. By having Riot open source to the public, means that
                         we can create a transparent layer between us and the user. Contribute, create your own
                         bot or make your own version of the Riot client.</p>
-                    {/* <a href="developers.html" className={css.more}>Learn More</a> */}
                     <br />
-                    <a href="developers.html" className={css['btn-purple']}>Log into the Developer Portal</a>
+                    <a href="/developers" className={css['btn-purple']}>Log into the Developer Portal</a>
+                    <a href="https://github.com/riotchat" className={css.button} target="_blank">View on Github</a>
                 </ContentOpacityLayer>
             </section>
             <section id="sign-up" style={{backgroundImage: "url('/assets/images/signup.png')"}}>
