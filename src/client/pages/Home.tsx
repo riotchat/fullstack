@@ -9,6 +9,28 @@ import { PriceTable } from '../components/PriceTable';
 const css = require('./Home.css');
 const { logo } = require('../components/HeaderFooter.css');
 
+class TestingSignUpForm extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            email: ""
+        }
+
+        this.onSubmit = this.onSubmit.bind(this);
+    }
+
+    onSubmit(e: React.FormEvent) {
+        e.preventDefault();
+    }
+
+    render() {
+        return <form onSubmit={this.onSubmit}>
+            <input type="email" placeholder="yourmail@mail.com" onChange={(e) => this.setState({email: e.target.value})} />
+            <input type="submit" value="Sign up" />
+        </form>;
+    }
+}
+
 export const Home: React.FunctionComponent = () => (
     <div>
         <Helmet>
@@ -91,10 +113,7 @@ export const Home: React.FunctionComponent = () => (
                         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAB1ElEQVRoQ+1ZUU7CQBB9Q/nXG4g3wBvACfQIcgOJ1cSUDz8gfkCCR8Ab6EmsN4AbwLfAGCoSC7QD29namu0XCczMe/PebJddQskfKjl+OAJ/raBT4F8pwE/DGpaLIYA6gJoSuTGAEBWvTQ/t1efYo2ahCPxi8Q7CqRLweBrGFJ53sU1Cj0C3/wqiSyvgf5Iyv1Hn7up3DT0Cvf4UoBOrBIAxBf65JQIDjiUOfJXmcC89r0qRFXCpkKkyUl5HYDNfgtROgXUHaGu2nIUOtRB3ByPq+NfHWqkwQ/wNhEN8Vpv02J4eSiQ3AhKgDZDVloCWTQruQynmkOVZbQYkMNudBKhFwe3o2DhrQ3wskPXvRxT4rbTY4lloB236XGQmsCu91GuD71PmohwENpx358IRyMVC4BnAjX1La2YFDBy9NySxEYwPzL1G0sut2AQYL9L2osAESvsiS/b7Pu/lpoBUKPpe8HuxCZR9O226mknKqu1GpUKOgPtPLHjAWSihQVJjFIc4h8NdxoQ6fuzeQY9A6Y/Xo9uZeWjviJ1nqFTr1i44oiOQ6JZm/gxQHYQz07U/FseYROdJXvXG6hWTCliDJGozYFBbJcQRUGljhiROgQzNUwn9AjSlVkCDe2zVAAAAAElFTkSuQmCC" />
                     <h1>Sign-up for testing</h1>
                     <p>Want to help us out with testing Riot? Sign-up to get into our testing team.</p>
-                    <form>
-                        <input type="email" placeholder="yourmail@mail.com" />
-                        <input type="submit" value="Sign up" />
-                    </form>
+                    <TestingSignUpForm />
                 </ContentOpacityLayer>
             </section>
         </main>

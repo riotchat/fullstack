@@ -208,8 +208,8 @@ nav .logo:hover {
 }
 
 footer {
-    max-width: 1600px;
-    margin: 0 auto;
+    width: 100%;
+    background-color: rebeccapurple;
 }
 
 footer h3 { /* Footer Menu Title */
@@ -219,9 +219,11 @@ footer h3 { /* Footer Menu Title */
 
 .footer-wrapper {
     width: 100%;
+    max-width: 1600px;
+    margin: auto;
     padding: 25px;
+    position: block;
     display: grid;
-    float: right;
     text-align: center;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     align-items: flex-start;
