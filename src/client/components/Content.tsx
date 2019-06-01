@@ -4,32 +4,32 @@ const css = require('../pages/Home.css');
 
 type ContentProps = {
     children?: React.ReactNode,
-    image?: string,
+    image?: React.ReactNode,
     imageAlign?: "LEFT" | "RIGHT"
 }
 
-export const Content: React.FunctionComponent<ContentProps> = (props) => (
-    <div className={css.content}>
-        <div className={css['content-wrap']}>
-            {/* LEFT ALIGN IMAGE */}
-            {props.image !== undefined && props.imageAlign !== "RIGHT" &&
-                <div className={css['content-image']}>
+export const Content: React.FunctionComponent<ContentProps> = (props) => {
+    let image = undefined;
+    if(typeof props.image === "string") {
+        image =
+            <div className={css['content-image']}>
                     <img src={props.image} />
-                </div>
-            }
+            </div>;
+    } else image = props.image;
+
+    return <div className={css.content}>
+        <div className={css['content-wrap']}>
+            {/* LEFT ALIGN */}
+            {props.imageAlign !== "RIGHT" && image}
             {/* CONTENT */}
             <div className={css.hook}>
                 {props.children}
             </div>
-            {/* RIGHT ALIGN IMAGE*/}
-            {props.image !== undefined && props.imageAlign === "RIGHT" &&
-                <div className={css['content-image']}>
-                    <img src={props.image} />
-                </div>
-            }
+            {/* RIGHT ALIGN*/}
+            {props.imageAlign === "RIGHT" && image}
         </div>
-    </div>
-);
+    </div>;
+}
 
 export const ContentOpacityLayer: React.FunctionComponent<ContentProps> = (props) => (
     <div className={css['opacity-layer']}>

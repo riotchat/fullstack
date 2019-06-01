@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 import { Content, ContentOpacityLayer } from '../components/Content';
 import { Footer } from '../components/HeaderFooter';
+import { PriceTable } from '../components/PriceTable';
 
 const css = require('./Home.css');
 const { logo } = require('../components/HeaderFooter.css');
@@ -91,6 +92,15 @@ export const Home: React.FunctionComponent = () => (
                     <a href="/developers" className={css['btn-purple']}>Log into the Developer Portal</a>
                     <a href="https://github.com/riotchat" className={css.button} target="_blank">View on Github</a>
                 </ContentOpacityLayer>
+            </section>
+            <section id="pro" style={{background: 'linear-gradient(#9987F5, #EA86F3)'}}>
+                <Content image={<PriceTable />} imageAlign="RIGHT">
+                    <h1 className={logo}>Riot<span className={css.pro}>PRO</span></h1>
+                    <h2>Take your riot to the next level.</h2>
+                    <p>Want your server to stand out? With Riot PRO, get the latest, cutting edge technology, right
+                        for your community.</p>
+                    <Link to="/pro" className={css.more}>Learn More</Link>
+                </Content>
             </section>
             <section id="sign-up" style={{backgroundImage: "url('/assets/images/signup.png')"}}>
                 <ContentOpacityLayer>

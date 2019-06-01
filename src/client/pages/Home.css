@@ -66,17 +66,13 @@ hr {
     font-size: 24px;
 }
 
-.pro-title {
-    font-size: 60px;
-    font-family: "VX Rocket", sans-serif;
-}
-
-.pro-title .pro { /* Riot PRO Text */
+.pro { /* Riot PRO Text */
     margin-left: 12px;
-    font-size: 48px;
+    font-size: 44px;
     font-family: "Pro", sans-serif;
     font-style: italic;
     color: white;
+    font-weight: bold;
     /*text-align: center;*/
     /*background: -webkit-linear-gradient(#9987F5, #EA86F3);
     -webkit-background-clip: text;
@@ -439,15 +435,21 @@ section#pro {
     z-index: 2;
     margin: 10px;
     font-size: 24px;
+    font-weight: normal;
+    user-select: none;
+}
+
+.title.riot {
     font-family: "VX Rocket", sans-serif;
 }
 
-.title span {
+.title.riot span {
     margin-left: 5px;
     vertical-align: middle;
     font-size: 20px;
-    font-family: "Dubtronic Inline", sans-serif;
+    font-family: "Pro", sans-serif;
     font-style: italic;
+    font-weight: bold;
 }
 
 #free-price {
@@ -455,7 +457,7 @@ section#pro {
 }
 
 .pro-text { /* Riot PRO Text */
-    font-family: "Dubtronic Inline", sans-serif;
+    font-family: "Pro", sans-serif;
 }
 
 .bkg {
@@ -524,6 +526,7 @@ section#pro {
     text-decoration: none;
     border-radius: 60px;
     font-size: 16px;
+    transition: .5s;
     user-select: none;
 }
 
