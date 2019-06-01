@@ -31,21 +31,20 @@
     "printWidth": 120
   },
   "keywords": [
-    "typescript",
-    "react",
-    "starter-kit",
-    "webpack",
-    "fullstack",
-    "express",
-    "express4",
-    "node"
+    "riot",
+    "riotchat",
+    "chat",
+    "games"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/gilamran/fullstack-typescript.git"
+    "url": "https://github.com/riotchat/fullstack.git"
   },
-  "license": "MIT",
-  "author": "Gil Amran",
+  "license": "Apache-2.0",
+  "contributors": [
+    "Martin Löffler <me@fatalerrorcoded.eu> (https://fatalerrorcoded.eu)",
+    "nizune"
+  ],
   "jest": {
     "roots": [
       "<rootDir>/src"
