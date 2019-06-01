@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 const css = require('./HeaderFooter.css');
 const homeCss = require('../pages/Home.css');
@@ -8,6 +8,29 @@ type FooterMenuProps = {
     header: string,
     children?: React.ReactNode
 }
+
+export const Navigation: React.FunctionComponent<{
+    fixed?: boolean
+}> = (props) => (
+    <nav className={props.fixed ? css.fixed : ""}>
+        <Link to="/" className={css.logo}>RIOT</Link>
+        <input className={css['menu-btn']} type="checkbox" id="menu-btn" />
+        <label className={css['menu-icon']} htmlFor="menu-btn">
+            <span className={css.navicon}></span>
+        </label>
+        <ul className={css.menu}>
+            <li><NavLink to="/" exact activeClassName={homeCss.active}>Home</NavLink></li>
+            <li><NavLink to="/blog" activeClassName={homeCss.active}>Blog</NavLink></li>
+            <li><NavLink to="/developers" activeClassName={homeCss.active}>Developers</NavLink></li>
+            {/* <ul>
+                            <li><a href="x">Get Started</a></li>
+                            <li><a href="x">Developer Portal</a></li>
+                            <li><a href="x">Open Source</a></li>
+                        </ul> */}
+            <li><NavLink activeClassName={homeCss.active} to="/download">Download</NavLink></li>
+        </ul>
+    </nav>
+);
 
 export const FooterMenu: React.FunctionComponent<FooterMenuProps> = (props) => (
     <div className={css['footer-menu']}>

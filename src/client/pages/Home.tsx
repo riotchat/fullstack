@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import { Content, ContentOpacityLayer } from '../components/Content';
-import { Footer } from '../components/HeaderFooter';
+import { Navigation, Footer } from '../components/HeaderFooter';
 import { PriceTable } from '../components/PriceTable';
 
 const css = require('./Home.css');
@@ -16,24 +16,7 @@ export const Home: React.FunctionComponent = () => (
         </Helmet>
         <main>
             <header>
-                <nav>
-                    <Link to="/" className={logo}>RIOT</Link>
-                    <input className={css['menu-btn']} type="checkbox" id="menu-btn" />
-                    <label className={css['menu-icon']} htmlFor="menu-btn">
-                        <span className={css.navicon}></span>
-                    </label>
-                    <ul className={css.menu}>
-                        <li><NavLink to="/" exact activeClassName={css.active}>Home</NavLink></li>
-                        <li><NavLink to="/blog" activeClassName={css.active}>Blog</NavLink></li>
-                        <li><NavLink to="/developers" activeClassName={css.active}>Developers</NavLink></li>
-                        {/* <ul>
-                            <li><a href="x">Get Started</a></li>
-                            <li><a href="x">Developer Portal</a></li>
-                            <li><a href="x">Open Source</a></li>
-                        </ul> */}
-                        <li><NavLink activeClassName={css.download} to="/download">Download</NavLink></li>
-                    </ul>
-                </nav>
+                <Navigation fixed={true}></Navigation>
                 <div className={css.header}>
                     <div className={css['header-info']}>
                         <div className={css.text}>
