@@ -4,6 +4,8 @@
     font-size: 48px;
     font-family: "VX Rocket", sans-serif;
     margin: auto 0;
+    font-weight: normal;
+    user-select: none;
 }
 
 nav .logo {
@@ -16,8 +18,6 @@ nav .logo {
     color: white;
     text-decoration: none;
     font-family: "VX Rocket", sans-serif;
-    font-weight: normal;
-    user-select: none;
     opacity: 1;
     transition: .3s;
 }

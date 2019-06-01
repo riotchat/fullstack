@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { Link } from 'react-router-dom';
 
 const css = require('./HeaderFooter.css');
 const homeCss = require('../pages/Home.css');
@@ -26,26 +27,26 @@ export const Footer: React.FunctionComponent = (props) => (
                 <span className={css.copyright}>&copy;2019 Riot Communications</span>
             </div>
             <div className={css.social}>
-                <a href="https://facebook.com"><img src="/assets/images/social/facebook.svg" title="Facebook" height="25px" /></a>
-                <a href="https://twitter.com/riotchat_"><img src="/assets/images/social/twitter.svg" title="Twitter" height="25px" /></a>
-                <a href="https://instagram.com/riotchat"><img src="/assets/images/social/instagram.svg" title="Instagram" height="25px" /></a>
+                <a href="https://facebook.com" target="_blank"><img src="/assets/images/social/facebook.svg" title="Facebook" height="25px" /></a>
+                <a href="https://twitter.com/riotchat_" target="_blank"><img src="/assets/images/social/twitter.svg" title="Twitter" height="25px" /></a>
+                <a href="https://instagram.com/riotchat" target="_blank"><img src="/assets/images/social/instagram.svg" title="Instagram" height="25px" /></a>
             </div>
             <FooterMenu header="Riot">
-                <a href="/download">Download</a>
-                <a href="/#lightweight">Features</a>
-                <a href="/branding">Branding</a>
-                <a href="/pro">Riot Pro<span className={homeCss.new}>New!</span></a>
+                <Link to="/download">Download</Link>
+                <Link to="/#lightweight">Features</Link>
+                <Link to="/branding">Branding</Link>
+                <Link to="/pro">Riot Pro<span className={homeCss.new}>New!</span></Link>
             </FooterMenu>
             <FooterMenu header="Developers">
-                <a href="/developers">Developer Portal</a>
-                <a href="/developers/documentation">Documentation</a>
-                <a href="/developers/applications">Applications</a>
-                <a href="/developers/open-source">Open-source</a>
+                <Link to="/developers">Developer Portal</Link>
+                <Link to="/developers/documentation">Documentation</Link>
+                <Link to="/developers/applications">Applications</Link>
+                <Link to="/#open-source">Open-source</Link>
             </FooterMenu>
             <FooterMenu header="Company">
-                <a href="about.html">About</a>
-                <a href="blog.html">Blog</a>
-                <a href="jobs.html">Jobs</a>
+                <Link to="/about">About</Link>
+                <Link to="/blog">Blog</Link>
+                <Link to="/jobs">Jobs</Link>
             </FooterMenu>
         </div>
     </footer>
