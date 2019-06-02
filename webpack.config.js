@@ -69,6 +69,32 @@ module.exports = {
         ],
       },
       {
+        test: /\.scss$/,
+        use: [
+          {
+            loader: 'style-loader',
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              camelCase: true,
+              sourceMap: !config.IS_PRODUCTION,
+            },
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: !config.IS_PRODUCTION,
+              plugins: config.IS_PRODUCTION ? [] : [cssnano()],
+            },
+          },
+          {
+            loader: 'sass-loader'
+          }
+        ],
+      },
+      {
         test: /.jpe?g$|.gif$|.png$|.svg$|.woff$|.woff2$|.ttf$|.eot$/,
         use: 'url-loader?limit=10000',
       },
