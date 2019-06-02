@@ -1,0 +1,93 @@
+@import "../sass/mixins";
+
+.color-wrapper {
+    width: 100%;
+}
+
+.color-box {
+    display: inline-block;
+    height: 300px;
+    width: calc(20% - 4px);
+    padding: 6px;
+    transition: .3s;
+
+    @include media(mobile) {
+        height: 160px;
+        width: 100%;
+        padding: 10px 20px;
+    }
+
+    .light {
+        color: black;
+        background-image: url('/assets/images/pattern/pattern-dark.png');
+    }
+
+    .dark {
+        color: white;
+        background-image: url('/assets/images/pattern/pattern.png');
+    }
+}
+
+.color-box:hover {
+    transform: scale(1.05);
+
+    @include media(mobile) {
+        transform: none;
+    }
+}
+
+.color-box-inner {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+
+.color-code-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+    border-radius: 4px;
+}
+
+.color-box-inner:hover .color-code-overlay {
+  opacity: 1;
+}
+
+.color-label {
+    position: absolute;
+    padding: 10px;
+    user-select: none;
+}
+
+.color-codes {
+    position: absolute;
+    left: 1em;
+    bottom: 1em;
+}
+
+.color-codes-mobile {
+    display: none;
+    position: absolute;
+    left: 1em;
+    bottom: 1em;
+    
+    @include media(mobile) {
+        display: block;
+    }
+}
+
+.color-code {
+    font-weight: 600;
+    margin-right: 15px;
+    opacity: .7;
+    user-select: none;
+}
