@@ -103,7 +103,7 @@ export const Branding: React.FunctionComponent = () => (
                 </div>
             </ContentOpacityLayer>
         </section>
-        <section className={css.test} id="font" style={{backgroundColor: "#FF7EC7", backgroundImage: "url('/assets/images/pattern/pattern.png')"}}>
+        <section className={css.test} id="font" style={{backgroundColor: "#FF7EC7", backgroundImage: "url('/assets/images/pattern/pattern.png')", backgroundSize: "contain"}}>
             <ContentOpacityLayer>
                 <div className={css.hook}>
                     <h2>Fonts</h2>
