@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Link, NavLink } from 'react-router-dom';
 
-const css = require('./HeaderFooter.css');
+const css = require('./HeaderFooter.scss');
 const homeCss = require('../pages/Home.css');
 
 type FooterMenuProps = {
@@ -26,7 +26,7 @@ export class Navigation extends React.Component<{ fixed?: boolean }, { openMenu:
     }
 
     render() {
-        return <nav className={`${this.props.fixed ? css.fixed : ""} ${this.state.openMenu ? css.active : ""}`}>
+        return <nav className={`${css.navigation} ${this.props.fixed ? css.fixed : ""} ${this.state.openMenu ? css.active : ""}`}>
             <div className={`${css.bkg} ${this.state.openMenu ? css.active : ""}`} />
             <Link to="/" className={css.logo}>RIOT</Link>
             <input className={css['menu-btn']} type="checkbox" id="menu-btn" onChange={this.onChange} />
@@ -60,8 +60,8 @@ export const FooterMenu: React.FunctionComponent<FooterMenuProps> = (props) => (
 
 export const Footer: React.FunctionComponent = (props) => (
     <footer>
-        <div id="footer" className={css['footer-wrapper']}>
-            <div className={css['footer-logo']}>
+        <div id="footer" className={css.wrapper}>
+            <div className={css.logo}>
                 <h1 className={css.logo}>RIOT</h1>
                 <span className={css.copyright}>&copy;2019 Riot Communications</span>
             </div>

@@ -8,7 +8,7 @@ import { Navigation, Footer } from '../components/HeaderFooter';
 import { PriceTable } from '../components/PriceTable';
 
 const css = require('./Home.css');
-const { logo } = require('../components/HeaderFooter.css');
+const { logo } = require('../components/HeaderFooter.scss');
 
 class TestingSignUpForm extends React.Component<{url: string, emailName: string}, {email: string, submission: 0 | 1 | 2}> {
     constructor(props) {
