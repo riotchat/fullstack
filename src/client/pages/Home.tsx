@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 import { Content, ContentOpacityLayer } from '../components/Content';
 import { Navigation, Footer } from '../components/HeaderFooter';
@@ -9,25 +10,56 @@ import { PriceTable } from '../components/PriceTable';
 const css = require('./Home.css');
 const { logo } = require('../components/HeaderFooter.css');
 
-class TestingSignUpForm extends React.Component {
+class TestingSignUpForm extends React.Component<{url: string, emailName: string}, {email: string, submission: 0 | 1 | 2 | 3}> {
     constructor(props) {
         super(props);
         this.state = {
-            email: ""
+            email: "",
+            submission: 0
         }
 
         this.onSubmit = this.onSubmit.bind(this);
     }
 
-    onSubmit(e: React.FormEvent) {
+    async onSubmit(e: React.FormEvent) {
         e.preventDefault();
+        let email = this.state.email;
+        this.setState({
+            email: this.state.email,
+            submission: 1
+        });
+
+        try {
+            let response = await axios.post(this.props.url, {
+                [this.props.emailName]: this.state.email
+            });
+
+            this.setState({
+                email: this.state.email,
+                submission: 2
+            });
+        } catch(e) {
+            console.error(e);
+            this.setState({
+                email: this.state.email,
+                submission: 3
+            });
+        }
     }
 
     render() {
-        return <form onSubmit={this.onSubmit}>
-            <input type="email" placeholder="yourmail@mail.com" onChange={(e) => this.setState({email: e.target.value})} />
-            <input type="submit" value="Sign up" />
-        </form>;
+        if(this.state.submission === 0 || this.state.submission === 1) {
+            return <form onSubmit={this.onSubmit}>
+                <input type="email" disabled={this.state.submission !== 0} required placeholder="yourmail@mail.com" onChange={
+                    (e) => this.setState({email: e.target.value, submission: this.state.submission})
+                } />
+                <input type="submit" disabled={this.state.submission !== 0} value="Sign up" />
+            </form>;
+        } else if(this.state.submission === 2) {
+            return <h4>Thank you!</h4>;
+        } else {
+            return <h4>Something went wrong</h4>; 
+        }
     }
 }
 
@@ -113,7 +145,7 @@ export const Home: React.FunctionComponent = () => (
                         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAB1ElEQVRoQ+1ZUU7CQBB9Q/nXG4g3wBvACfQIcgOJ1cSUDz8gfkCCR8Ab6EmsN4AbwLfAGCoSC7QD29namu0XCczMe/PebJddQskfKjl+OAJ/raBT4F8pwE/DGpaLIYA6gJoSuTGAEBWvTQ/t1efYo2ahCPxi8Q7CqRLweBrGFJ53sU1Cj0C3/wqiSyvgf5Iyv1Hn7up3DT0Cvf4UoBOrBIAxBf65JQIDjiUOfJXmcC89r0qRFXCpkKkyUl5HYDNfgtROgXUHaGu2nIUOtRB3ByPq+NfHWqkwQ/wNhEN8Vpv02J4eSiQ3AhKgDZDVloCWTQruQynmkOVZbQYkMNudBKhFwe3o2DhrQ3wskPXvRxT4rbTY4lloB236XGQmsCu91GuD71PmohwENpx358IRyMVC4BnAjX1La2YFDBy9NySxEYwPzL1G0sut2AQYL9L2osAESvsiS/b7Pu/lpoBUKPpe8HuxCZR9O226mknKqu1GpUKOgPtPLHjAWSihQVJjFIc4h8NdxoQ6fuzeQY9A6Y/Xo9uZeWjviJ1nqFTr1i44oiOQ6JZm/gxQHYQz07U/FseYROdJXvXG6hWTCliDJGozYFBbJcQRUGljhiROgQzNUwn9AjSlVkCDe2zVAAAAAElFTkSuQmCC" />
                     <h1>Sign-up for testing</h1>
                     <p>Want to help us out with testing Riot? Sign-up to get into our testing team.</p>
-                    <TestingSignUpForm />
+                    <TestingSignUpForm url="" emailName="" />
                 </ContentOpacityLayer>
             </section>
         </main>
