@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 
-const css = require('../pages/Home.css');
+const css = require('../sass/main.scss');
 
 export const PriceTable: React.FunctionComponent = () => (
     <div className={css['price-table']}>

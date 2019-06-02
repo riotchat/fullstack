@@ -7,7 +7,7 @@ import { Content, ContentOpacityLayer } from '../components/Content';
 import { Navigation, Footer } from '../components/HeaderFooter';
 import { PriceTable } from '../components/PriceTable';
 
-const css = require('./Home.css');
+const css = require('../sass/main.scss');
 const { logo } = require('../components/HeaderFooter.scss');
 
 class TestingSignUpForm extends React.Component<{url: string, emailName: string}, {email: string, submission: 0 | 1 | 2}> {

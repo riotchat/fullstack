@@ -2,7 +2,7 @@ import * as React from 'react'
 import { Link, NavLink } from 'react-router-dom';
 
 const css = require('./HeaderFooter.scss');
-const homeCss = require('../pages/Home.css');
+const homeCss = require('../sass/main.scss');
 
 type FooterMenuProps = {
     header: string,

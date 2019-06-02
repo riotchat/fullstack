@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-const css = require('../pages/Home.css');
+const css = require('../sass/main.scss');
 
 type ContentProps = {
     children?: React.ReactNode,
