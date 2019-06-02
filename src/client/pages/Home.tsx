@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
+import { ScrollToTopOnMount, smoothScroll } from '../utils/Utils';
 import { Content, ContentOpacityLayer } from '../components/Content';
 import { Navigation, Footer } from '../components/HeaderFooter';
 import { PriceTable } from '../components/PriceTable';
@@ -67,6 +68,7 @@ class TestingSignUpForm extends React.Component<{url: string, emailName: string}
 
 export const Home: React.FunctionComponent = () => (
     <div>
+        <ScrollToTopOnMount />
         <Helmet>
             <title>Riot | It's time to speak up.</title>
         </Helmet>
@@ -82,8 +84,8 @@ export const Home: React.FunctionComponent = () => (
                         <div className={css.buttons}>
                             {/* <a id="download" href="riot.html" class="button" style="background-color: mediumslateblue"><i class='bx bxl-windows'></i> Download</a> */}
 
-                            <a href="#sign-up" className={css['btn-purple']}>Sign up to test</a>
-                            <a href="#lightweight" className={css.button}>Learn More</a>
+                            <a href="#sign-up" className={css['btn-purple']} onClick={smoothScroll}>Sign up to test</a>
+                            <a href="#lightweight" className={css.button} onClick={smoothScroll}>Learn More</a>
                         </div>
                     </div>
                 </div>

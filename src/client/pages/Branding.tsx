@@ -1,7 +1,9 @@
 import * as React from 'react'
+import { Helmet } from 'react-helmet';
 
+import { ScrollToTopOnMount, smoothScroll } from '../utils/Utils';
 import { ContentOpacityLayer } from '../components/Content';
-import { Navigation } from '../components/HeaderFooter';
+import { Navigation, Footer } from '../components/HeaderFooter';
 
 const css = require('../sass/main.scss');
 const brandingCss = require('./Branding.scss');
@@ -40,27 +42,31 @@ function toCmyk(r: number, g: number, b: number): { c: number, m: number, y: num
 function isLight(r: number, g: number, b: number): boolean {
     let hsp;
 
-    // HSP (Highly Sensitive Poo) equation from http://alienryderflex.com/hsp.html
+    // HSP equation from http://alienryderflex.com/hsp.html
     hsp = Math.sqrt(
         0.299 * (r * r) +
         0.587 * (g * g) +
         0.114 * (b * b)
     );
 
-    console.log(`${r} ${g} ${b}: ${hsp}`)
-
     // Using the HSP value, determine whether the color is light or dark
     return hsp > 140;
 }
 
-const Font: React.FunctionComponent<{ fontFamily: string, fontWeight?: number, description?: string }> = (props) => (
-    <div>
+const Font: React.FunctionComponent<{ fontFamily: string, fontWeight?: number, description?: string, link?: string }> = (props) => {
+    let fontFamily: string | React.ReactNode = props.fontFamily;
+    if(props.link !== undefined) fontFamily = <a href={props.link} style={{color: "white"}}>{props.fontFamily}</a>
+    return <div>
         <h1 style={{fontFamily: `"${props.fontFamily}", sans-serif`, fontWeight: props.fontWeight}}>
             The quick brown fox jumps over the lazy dog.
         </h1>
-        <p>{props.description ? `${props.fontFamily} | ${props.description}` : props.fontFamily}</p>
+        {props.description ?
+            <p><b>{fontFamily}</b> | {props.description}</p>
+        :
+            <p><b>{fontFamily}</b></p>
+        }
     </div>
-)
+}
 
 const ColorBox: React.FunctionComponent<{name: string, red: number, green: number, blue: number, isLight?: boolean}> = (props) => {
     let hex = "#" + componentToHex(props.red) + componentToHex(props.green) + componentToHex(props.blue);
@@ -89,63 +95,96 @@ const ColorBox: React.FunctionComponent<{name: string, red: number, green: numbe
 }
 
 export const Branding: React.FunctionComponent = () => (
-    <main>
-        <header>
-            <Navigation fixed={true} />
-        </header>
-        <section id="logo" style={{backgroundImage: 'url(login/developer.jpg)'}}>
-            <ContentOpacityLayer>
-                <div className={css.hook}>
-                    <h2>Our logo</h2>
-                    <p>Use our logo in any of your promotional material, just don't stretch it.</p>
-                    <p>Want to color our logo? We've got a couple of good recommendations:</p>
-                    <p>(We recommend using bright colors with light backgrounds, and toned-down colors with darker backgrounds)</p>
+    <div>
+        <ScrollToTopOnMount />
+        <Helmet>
+            <title>Riot | Branding</title>
+        </Helmet>
+        <main>
+            <header>
+                <Navigation fixed={true} />
+                <div className={css.header}>
+                    <div className={css['header-info']}>
+                        <div className={css.text}>
+                            <h1>Branding</h1>
+                            <p style={{ marginBottom: "20px" }}>Riot is a brand of the 21st Century, and we've got the design to prove it.</p>
+                            <p>To use any of our material in any press, please contact us beforehand.</p>
+                        </div>
+                        <div className={css.buttons}>
+                            <a href="#download" className={css['btn-purple']} onClick={smoothScroll}>Download Press Kit</a>
+                        </div>
+                    </div>
                 </div>
-            </ContentOpacityLayer>
-        </section>
-        <section className={css.test} id="font" style={{backgroundColor: "#FF7EC7", backgroundImage: "url('/assets/images/pattern/pattern.png')", backgroundSize: "contain"}}>
-            <ContentOpacityLayer>
-                <div className={css.hook}>
-                    <h2>Fonts</h2>
-                    <p>What truly makes us unique.</p>
-                    <p></p>
+            </header>
+            <section id="logo" style={{ backgroundImage: 'url(login/developer.jpg)' }}>
+                <ContentOpacityLayer>
+                    <div className={css.hook}>
+                        <h2>Our logo</h2>
+                        <p>Use our logo in any of your promotional material, just don't stretch it.</p>
+                        <p>Want to color our logo? We've got a couple of good recommendations:</p>
+                        <p>(We recommend using bright colors with light backgrounds, and toned-down colors with darker backgrounds)</p>
+                    </div>
+                    <div className={css.contentImage}>
+                        <div className={css.logoGrid}>
+                            <div className={css.logoBig}>
+                                <div className={css.logoSmall}>
+                                    <div className={css.logoSmall}>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ContentOpacityLayer>
+            </section>
+            <section className={css.test} id="font" style={{ backgroundColor: "#FF7EC7", backgroundImage: "url('/assets/images/pattern/pattern.png')", backgroundSize: "contain" }}>
+                <ContentOpacityLayer>
+                    <style>
+                        @import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+                    </style>
+                    <div className={css.hook}>
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAACe0lEQVRoQ+2XTVLbQBCFX4sNO+AG5gSxN6mSVs4JgBOEnADYI0WR2UNOQHIC4AQkG09VNvgGkBPEWSWbqFMuCtuSRvOnkW2qpKXk8czX3fNeN+GVP/TKz48OYN0Z7DLQZaBhBLoSegkgJyIF8LEYUP5MWXQqCzIngl2CT1lYCLqXDHD6sIv8zyNAuyWAKWXR3uYDxOIYhGtpRHM+oovotvxtszKQiEcAPXlJ8B1l0eHGAvC5GCLAvbKeg+09SgdTl5rXrWl8BzgW9yAMlzb6CkYfhDfzd8xnNIqudIdx+d4IgFPRQ45Z+SyeHO9A3AfR5eIlTyiLBi4H1K1pBpCILwDeLyKN7zQKh8+q9PdXYfNga0Dp24nuQLbfnQGk0sn4QKNwBgVOxrcAHSxlQeoJtmrkzQcqxsX8k0bRXIn4fHyIgG6WAKSesE6AsnR+oiycufGiomIxBWFn/kLiCWsB4LJxMX5ja7tXlkpOxlcAnSwhVTxhXQAV6aQsPK6YVfqjj/zfQ/Ey+/UE60ssNa4A+5SGTzIF4VhM2vQEe4Aa6ayTP47Hp216ghVAnXHRRfitFqBlT7ADKPf8JemshTD0hGf/UM8Jzj6gMy6Vg5p6QrsAqp7f1v9nv3ecE9wzoOz5XQjc5gQnAKOe34XBw5xgdIklPb/LcatrPMwJWgAX6VylJ+gBLI1LqUYteIISoIl0+vAEkzpVAzgaly9P8AGg7flNNql0qQZzgun/1mbAtOc33agw6BjMCab/qwIw6vlNNyoAeJwTpAC2Pb8ThKc5QQ7gUTrb9oQKgE/jWoUnaI3MpTxWuaYDWGW0ZXt1Gegy0DACXQk1DGDj5f8BwICKQHiWcEgAAAAASUVORK5CYII=" />
+                        <h2>Fonts</h2>
+                        <p>What truly makes us unique.</p>
+                    </div>
+                    <div className={`${css.hook} ${brandingCss.fontContainer}`}>
+                        <Font fontFamily="VX Rocket" fontWeight={400} link="https://www.dafont.com/vx-rocket.font" />
+                        <Font fontFamily="Poppins" description="Only used in promotional material" link="https://fonts.google.com/specimen/Poppins" />
+                        <Font fontFamily="Open Sans" link="https://fonts.google.com/specimen/Open+Sans" />
+                    </div>
+                </ContentOpacityLayer>
+            </section>
+            <section id="colors">
+                <div className={css.content}>
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAADmElEQVRoQ+2ZUU7bQBCG/1lQpEpt7JV5b7hBeoLSE8ANCCcgnIBwAugJCCcgR4ATQE8AvMeyTStVQsJTrYmR4+zGu7aTKhJ+TGZn55uZnRmvCRv+0Ibbjw+A/x3B1iLwN4p6LyLdZ+Y9AD5APgH9HJCBe4AfiehmKxW3n6W8bwO+EQBHkf8s0mNmDAjouRjEwCMRxp1UXH2S8tFlbVG2FkDB8CFl3m74EEbdVPwkKWNXTc4Az9H0ICW6bMXwgrUMxIL5qCt3Ji4QTgBJEp6CMXLZwFmWMPK84Mx2nRXALGXOwRjYKm4kRxh7XnBko8MKII6n1wQ6qFTIOOlAZCnwgnQAwmnlGpOAJUQlQJKEl1aeZ5x4Mrgo2pNE4agRBOPMk8HSlF0KoA4sE13beLHLQparSNYbKH1YWO8QKcHixxcpb8yBMvyj8j6h9MG22lgDOEZKVSePxa6pxBojkEThBQjHNt7PZDTh1qWQNWhx4yWppAUwhr6KhjBSnTU7xCI91JXcOgDLoqAFaHz4loFaRkp3bspFQsloAeI4VLnvNNtUBWfuf4tIlfWp2cn3g93y7wsAf6Ko/0rpndYgxlkHYtxKnXcifhPeYvGtPMUuABjTp27oaxhqXKKpYBqA6QRE+2UlHRa75bG39mGvC8W48mQwN84sAMRxeFd8Ecn3qlM96tppWsfMt77cUS9M789iBOKQDfmvGxWGIJy3bagRAIh9P5C1AFQtprcXj6zOP7/V+bnZZx0gnh/MOd0+AuuwzmKPjQZgxi9fBu8XBdpGFkfTGyL6buGM9YtoSrl1GV2/tfM7MuPJg+iXp1JdI6uuLC12ZJUW6h6JCF/N5RPJNsSe7i7JbZRQO7TVkRlXXYhh7tFshEGqnHeYgzAjIWBSlCtD6oe5KFSXTlqPtNKRNR21aJiC2QJimwsv53G6jY6s01H3jLm/0OhfCavPzcxCXSmsa7y2jObKTFNp046s1pfHgZUAZC/1SNVZ8JpsoFurm+vr7tHatYqTARWH2EVX9cVW08spjTVtplElgNo/icJxsT67eMgk21YaWQGsAmLtADOIZnedhXCUx+K6UbWOQL7B7yjae0U6aVSd1nmIdZ7JvhcgHTIwdAVR840H0avzOUlni3MEikpmIIMZiHGaLAxnT9sQB219oVzaiV1zcjZNqhuDPoN7APXz6KjxYTZVXrTl+dy+RhFwhVyF/AfAKrzqonPjI/APzgDnQCNJcuAAAAAASUVORK5CYII=" />
+                    <h1>Brand Colors</h1>
+                    <p>Here are some of the colors we use the most.</p>
+                    <div className={brandingCss.colorWrapper}>
+                        <ColorBox name="Rioting" red={123} green={104} blue={238} />
+                        <ColorBox name="Melting Popsicle" red={255} green={187} blue={0} />
+                        <ColorBox name="Almost White" red={239} green={239} blue={239} />
+                        <ColorBox name="Actually White" red={255} green={255} blue={255} />
+                        <ColorBox name="Not Black" red={51} green={50} blue={52} />
+                    </div>
                 </div>
-                <div className={css.hook} style={{ marginLeft: '200px' }}>
-                    <Font fontFamily="VX Rocket" fontWeight={400} />
-                    <Font fontFamily="Poppins" description="only used in promotional material" />
-                    <Font fontFamily="Open Sans" />
+            </section>
+            <section id="icons">
+                <div className={css.content}>
+                    <h1>Iconography</h1>
+                    <p>We use Atisa's gorgeous Boxicons. Licensed under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons 4.0 license</a>.</p>
+                    <a className={css.btnPurple} href="https://github.com/atisawd/boxicons" target="_blank">View on GitHub</a>
                 </div>
-            </ContentOpacityLayer>
-        </section>
-        <section id="colors">
-            <div className={css.content}>
-                <h1>Brand Colors</h1>
-                <p>Here are some of the colors we use the most.</p>
-                <div className={brandingCss.colorWrapper}>
-                    <ColorBox name="Rioting" red={123} green={104} blue={238} />
-                    <ColorBox name="Melting Popsicle" red={255} green={187} blue={0} isLight={false} />
-                    <ColorBox name="Almost White" red={239} green={239} blue={239} />
-                    <ColorBox name="Actually White" red={255} green={255} blue={255} />
-                    <ColorBox name="Not Black" red={51} green={50} blue={52} />
+            </section>
+            <section id="download">
+                <div className={css.content}>
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAABcElEQVRoQ+2ZQW7CQAxF7UpVlzRwkPYI3KRhgZQzwIYNnCFSFw034QjtQSCwREi4ygKaRdOxx55UILNCwuP5/7+JRwoIN/7BG9cPbuC/CTqBuyEwL3YkMbMshyb0TZo0wt2ABF+r1glcwvAj5EcoMgE/QsrgfAr5EerrCM2LbQWAb8r9mMtpvSxHOadY9Az0Y4IvvjEoMrDI6+fTE20A4YWTjriG4OvxiONFle25a0UGmqbJTESIFxO4pDKb1q/wQBtEGHCT+quOCA5wxvHqPfuU9hMTsDahER9N4GqiqHME+pCm1q4nwMmqzKrYHtEELExoxasJ/NzCMXeEbFx2EVITiDNhI96MgGi8Ro7L5ARYJozFmxIIjVftuOyFQJeJVOKTEPhtvFqMy14JtE003zUXVeiCMxujoY1S/e4GUiXL7Xv/BKTvPLnJcetC/yMECbgBbtQddU5AGWDy5cFnILkC5QZuQBmgerkTUEeobPANQYjBMbmRM/QAAAAASUVORK5CYII=" />
+                    <h1>Download our press kit</h1>
+                    <p>Includes full size logos, promotional images and more.</p>
+                    <div className={css.contentImage}>
+                        <a className={css.btnPurple} href="/assets/downloads/branding/branding.zip" download="RiotBranding.zip">Download Kit</a>
+                    </div>
                 </div>
-            </div>
-        </section>
-        <section id="icons">
-            <div className={css.content}>
-                <h1>Iconography</h1>
-                <p>We use Atisa's gorgeous Boxicons</p>
-                <a className={css.btnPurple} href="https://github.com/atisawd/boxicons" target="_blank">View on GitHub</a>
-            </div>
-        </section>
-        <section id="download">
-            <div className={css.content}>
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAABcElEQVRoQ+2ZQW7CQAxF7UpVlzRwkPYI3KRhgZQzwIYNnCFSFw034QjtQSCwREi4ygKaRdOxx55UILNCwuP5/7+JRwoIN/7BG9cPbuC/CTqBuyEwL3YkMbMshyb0TZo0wt2ABF+r1glcwvAj5EcoMgE/QsrgfAr5EerrCM2LbQWAb8r9mMtpvSxHOadY9Az0Y4IvvjEoMrDI6+fTE20A4YWTjriG4OvxiONFle25a0UGmqbJTESIFxO4pDKb1q/wQBtEGHCT+quOCA5wxvHqPfuU9hMTsDahER9N4GqiqHME+pCm1q4nwMmqzKrYHtEELExoxasJ/NzCMXeEbFx2EVITiDNhI96MgGi8Ro7L5ARYJozFmxIIjVftuOyFQJeJVOKTEPhtvFqMy14JtE003zUXVeiCMxujoY1S/e4GUiXL7Xv/BKTvPLnJcetC/yMECbgBbtQddU5AGWDy5cFnILkC5QZuQBmgerkTUEeobPANQYjBMbmRM/QAAAAASUVORK5CYII="/>
-                <h1>Download our press kit</h1>
-                <p>Includes full size logos, promotional images and more.</p>
-                <div className={css.contentImage}>
-                    <a className={css.btnPurple} href="/assets/downloads/branding/branding.zip" download="RiotBranding.zip">Download Kit</a>
-                </div>
-            </div>
-        </section>
-    </main>
+            </section>
+        </main>
+        <Footer />
+    </div>
 )

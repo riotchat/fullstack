@@ -211,22 +211,30 @@ footer {
 
         @include media(mobile) {
             /*display: block;*/
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+    }
+
+    .logo-wrapper {
+        margin: 10px;
+        text-align: left;
+        user-select: none;
+        align-self: center;
+        @include media(mobile) {
+            display: block;
+            grid-column: 1 / span 3;
         }
     }
 
     .logo {
-        margin: 20px;
-        text-align: left;
-        user-select: none;
-        align-self: center;
-        @include media(mobile) { display: block; }
+        margin: 0px;
     }
 
     .copyright {
         color: lightgrey;
         font-size: 12px;
         font-family: sans-serif;
+        margin-left: 0px;
     }
     
     ul {
@@ -252,11 +260,14 @@ footer {
         user-select: none;
         a {
             margin: 10px;
-            transition: .5s;
+            transition: .3s;
             &:hover { opacity: .7; }
         }
 
-        @include media(mobile) { display: block; }
+        @include media(mobile) {
+            display: block;
+            grid-column: 1 / span 3;
+        }
     }
 
     .footer-menu {

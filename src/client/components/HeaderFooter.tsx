@@ -58,12 +58,14 @@ export const FooterMenu: React.FunctionComponent<FooterMenuProps> = (props) => (
     </div>
 );
 
-export const Footer: React.FunctionComponent = (props) => (
-    <footer>
+export const Footer: React.FunctionComponent = (props) => {
+    let year = "2019";
+    if(new Date().getFullYear().toString() !== year) year = `${year} - ${new Date().getFullYear()}`;
+    return <footer>
         <div id="footer" className={css.wrapper}>
-            <div className={css.logo}>
+            <div className={css.logoWrapper}>
                 <h1 className={css.logo}>RIOT</h1>
-                <span className={css.copyright}>&copy;2019 Riot Communications</span>
+                <span className={css.copyright}>&copy;{year} Riot Communications</span>
             </div>
             <div className={css.social}>
                 <a href="https://facebook.com" target="_blank"><img src="/assets/images/social/facebook.svg" title="Facebook" height="25px" /></a>
@@ -89,4 +91,4 @@ export const Footer: React.FunctionComponent = (props) => (
             </FooterMenu>
         </div>
     </footer>
-)
+}

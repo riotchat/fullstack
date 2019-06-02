@@ -1,10 +1,5 @@
 /* ---------------------- Font Import ---------------------- */
 
-
-html {
-    scroll-behavior: smooth;
-}
-
 body {
     color: white;
 }
@@ -130,7 +125,7 @@ header .text h1 {
 }
 
 header .text p {
-    margin: 0 0 100px 0;
+    margin: 0 0 50px 0;
 }
 
 /* ------------ Background ------------ */
@@ -176,7 +171,7 @@ section:nth-last-child(odd) { /* Shadow on last section */
 .content {
     position: relative;
     margin: 0 auto;
-    padding: 100px 0;
+    padding: 100px 10px;
     max-width: 1400px;
 }
 
