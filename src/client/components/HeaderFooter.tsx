@@ -9,28 +9,44 @@ type FooterMenuProps = {
     children?: React.ReactNode
 }
 
-export const Navigation: React.FunctionComponent<{
-    fixed?: boolean
-}> = (props) => (
-    <nav className={props.fixed ? css.fixed : ""}>
-        <Link to="/" className={css.logo}>RIOT</Link>
-        <input className={css['menu-btn']} type="checkbox" id="menu-btn" />
-        <label className={css['menu-icon']} htmlFor="menu-btn">
-            <span className={css.navicon}></span>
-        </label>
-        <ul className={css.menu}>
-            <li><NavLink to="/" exact activeClassName={homeCss.active}>Home</NavLink></li>
-            <li><NavLink to="/blog" activeClassName={homeCss.active}>Blog</NavLink></li>
-            <li><NavLink to="/developers" activeClassName={homeCss.active}>Developers</NavLink></li>
-            {/* <ul>
-                            <li><a href="x">Get Started</a></li>
-                            <li><a href="x">Developer Portal</a></li>
-                            <li><a href="x">Open Source</a></li>
-                        </ul> */}
-            <li><NavLink activeClassName={homeCss.active} to="/download">Download</NavLink></li>
-        </ul>
-    </nav>
-);
+export class Navigation extends React.Component<{ fixed?: boolean }, { openMenu: boolean }> {
+    constructor(props) {
+        super(props);
+        this.state = {
+            openMenu: false
+        }
+        
+        this.onChange = this.onChange.bind(this);
+    }
+
+    onChange(e: React.ChangeEvent) {
+        this.setState({
+            openMenu: (e.target as any).checked
+        });
+    }
+
+    render() {
+        return <nav className={`${this.props.fixed ? css.fixed : ""} ${this.state.openMenu ? css.active : ""}`}>
+            <div className={`${css.bkg} ${this.state.openMenu ? css.active : ""}`} />
+            <Link to="/" className={css.logo}>RIOT</Link>
+            <input className={css['menu-btn']} type="checkbox" id="menu-btn" onChange={this.onChange} />
+            <label className={css['menu-icon']} htmlFor="menu-btn">
+                <span className={css.navicon}></span>
+            </label>
+            <ul className={css.menu}>
+                <li><NavLink to="/" exact activeClassName={css.active}>Home</NavLink></li>
+                <li><NavLink to="/blog" activeClassName={css.active}>Blog</NavLink></li>
+                <li><NavLink to="/developers" activeClassName={css.active}>Developers</NavLink></li>
+                {/* <ul>
+                        <li><a href="x">Get Started</a></li>
+                        <li><a href="x">Developer Portal</a></li>
+                        <li><a href="x">Open Source</a></li>
+                    </ul> */}
+                <li><NavLink activeClassName={css.active} to="/download">Download</NavLink></li>
+            </ul>
+        </nav>
+    }
+}
 
 export const FooterMenu: React.FunctionComponent<FooterMenuProps> = (props) => (
     <div className={css['footer-menu']}>
