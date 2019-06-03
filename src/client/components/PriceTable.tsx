@@ -11,20 +11,20 @@ export const PriceTable: React.FunctionComponent = () => (
                     <span className={css.price}>$5</span>
                     <span className={css.sub}>/month</span>
                     <span className={`${css.title} ${css.riot}`}>RIOT<span>PRO</span></span>
-                    <img src="login/y1ostvqnr4711.jpg" draggable={false} />
+                    <img src="/assets/images/pro-banner.jpg" draggable={false} />
                     <div className={css.opacity}></div>
                 </div>
                 <div>
                     <ul>
-                        <li><i className={[css.icon, css.bx, css['bxs-user-voice']].join(" ")} style={{color: '#A291F3'}}></i><b>256kbps </b>
+                        <li><i className={`${css.icon} bx bxs-user-voice`} style={{color: '#A291F3'}}></i><b>256kbps </b>
                             voice servers</li>
                         <hr />
-                        <li><i className={[css.icon, css.bx, css['bxs-brush']].join(" ")} style={{color: '#FFC12B'}}></i>Customize your
+                        <li><i className={`${css.icon} bx bxs-brush`} style={{color: '#FFC12B'}}></i>Customize your
                                             server</li>
                         <hr />
-                        <li><i className={[css.icon, css.bx, css['bx-server']].join(" ")} style={{color: '#2BC4FF'}}></i>Your own domain</li>
+                        <li><i className={`${css.icon} bx bx-server`} style={{color: '#2BC4FF'}}></i>Your own domain</li>
                         <hr />
-                        <li><i className={[css.icon, css.bx, css['bx-plus']].join(" ")} style={{color: '#E886F3'}}></i>And much more...</li>
+                        <li><i className={`${css.icon} bx bx-plus`} style={{color: '#E886F3'}}></i>And much more...</li>
                     </ul>
                 </div>
                 <Link className={css['btn-purple']} to="/pro">Learn More</Link>
@@ -40,13 +40,13 @@ export const PriceTable: React.FunctionComponent = () => (
                 </div>
                 <div>
                     <ul>
-                        <li><i className={[css.icon, css.bx, css['bxs-user-voice']].join(" ")} style={{color: 'grey'}}></i>192kbps voice
+                        <li><i className={`${css.icon} bx bxs-user-voice`} style={{color: 'grey'}}></i>192kbps voice
                                             servers</li>
                         <hr />
-                        <li><i className={[css.icon, css.bx, css['bxs-brush']].join(" ")} style={{color: 'grey'}}></i>Animated Server Icon
+                        <li><i className={`${css.icon} bx bxs-brush`} style={{color: 'grey'}}></i>Animated Server Icon
                                         </li>
                         <hr />
-                        <li><i className={[css.icon, css.bx, css['bx-server']].join(" ")} style={{color: 'grey'}}></i>Custom Domain</li>
+                        <li><i className={`${css.icon} bx bx-server`} style={{color: 'grey'}}></i>Custom Domain</li>
                     </ul>
                 </div>
                 <a id="create" className={css.button} href="login/login.html">Create server</a>
