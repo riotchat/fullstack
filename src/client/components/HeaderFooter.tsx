@@ -82,7 +82,7 @@ export const Footer: React.FunctionComponent = (props) => {
                 <Link to="/developers">Developer Portal</Link>
                 <Link to="/developers/documentation">Documentation</Link>
                 <Link to="/developers/applications">Applications</Link>
-                <Link to="/#open-source">Open-source</Link>
+                <a href="/#open-source">Open-source</a>
             </FooterMenu>
             <FooterMenu header="Company">
                 <Link to="/about">About</Link>

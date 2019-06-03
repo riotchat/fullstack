@@ -174,15 +174,17 @@ export const Branding: React.FunctionComponent = () => (
                     <a className={css.btnPurple} href="https://github.com/atisawd/boxicons" target="_blank">View on GitHub</a>
                 </div>
             </section>
-            <section id="download">
+            <section id="download" style={{ backgroundColor: "#7B68EE", backgroundImage: "url('/assets/images/pattern/pattern.png')", backgroundSize: "contain" }}>
+            <ContentOpacityLayer>
                 <div className={css.content}>
                     <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAABcElEQVRoQ+2ZQW7CQAxF7UpVlzRwkPYI3KRhgZQzwIYNnCFSFw034QjtQSCwREi4ygKaRdOxx55UILNCwuP5/7+JRwoIN/7BG9cPbuC/CTqBuyEwL3YkMbMshyb0TZo0wt2ABF+r1glcwvAj5EcoMgE/QsrgfAr5EerrCM2LbQWAb8r9mMtpvSxHOadY9Az0Y4IvvjEoMrDI6+fTE20A4YWTjriG4OvxiONFle25a0UGmqbJTESIFxO4pDKb1q/wQBtEGHCT+quOCA5wxvHqPfuU9hMTsDahER9N4GqiqHME+pCm1q4nwMmqzKrYHtEELExoxasJ/NzCMXeEbFx2EVITiDNhI96MgGi8Ro7L5ARYJozFmxIIjVftuOyFQJeJVOKTEPhtvFqMy14JtE003zUXVeiCMxujoY1S/e4GUiXL7Xv/BKTvPLnJcetC/yMECbgBbtQddU5AGWDy5cFnILkC5QZuQBmgerkTUEeobPANQYjBMbmRM/QAAAAASUVORK5CYII=" />
                     <h1>Download our press kit</h1>
                     <p>Includes full size logos, promotional images and more.</p>
-                    <div className={css.contentImage}>
+                    {/*<div className={css.contentImage}>*/}
                         <a className={css.btnPurple} href="/assets/downloads/branding/branding.zip" download="RiotBranding.zip">Download Kit</a>
-                    </div>
+                    {/*</div>*/}
                 </div>
+            </ContentOpacityLayer>
             </section>
         </main>
         <Footer />

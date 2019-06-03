@@ -1,3 +1,5 @@
+@import "./colors";
+
 /* ---------------------- Font Import ---------------------- */
 
 body {
@@ -12,7 +14,18 @@ h1 {
 }
 
 .pro-title {
+    font-size: 60px;
+    font-weight: 400;
+    font-family: "VX Rocket", sans-serif;
+    user-select: none;
+}
+
+.pro-title .pro { /* Riot PRO Text */
+    margin-left: 12px;
     font-size: 48px;
+    font-family: "Pro", sans-serif;
+    font-style: italic;
+    color: white;
 }
 
 h2 { /* Features Title */
@@ -88,6 +101,16 @@ hr {
     border-radius: 60px;
 }
 
+.coming-soon {
+    color: white;
+    margin: 0;
+    padding: 2px 5px;
+    font-size: 12px;
+    background: $primary-color;
+    border-radius: 4px;
+    user-select: none;
+}
+
 /* ---------------------- Header ---------------------- */
 
 header {
@@ -152,21 +175,14 @@ section {
     position: relative;
     background-size: cover;
     background-position: center;
-    background-color: dimgrey;
+    /*background-color: dimgrey;*/
+    background: darkgrey;
     /*margin: 100px 0;*/
 }
 
 section:nth-last-child(odd) { /* Shadow on last section */
     box-shadow: 0px 9px 20px -18px rgba(0,0,0,0.75);
 }
-
-/*.opacity-layer {
-    position: absolute;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    background: rgba(0,0,0,0.5);
-}*/
 
 .content {
     position: relative;
@@ -213,10 +229,10 @@ section#pro {
 
 .price-table {
     display: flex;
-    /*flex-direction: row;*/
     margin: auto;
     width: 100%;
     text-align: center;
+    align-items: center;
     flex-wrap: wrap;
     justify-content: flex-end;
     color: black;
@@ -229,9 +245,7 @@ section#pro {
 }
 
 .table {
-    /* remove height later */
-    height: 508px;
-    padding: 0 0 40px 0;
+    padding: 0 0 5px 0;
     border-radius: 20px;
     background: white;
 }
@@ -360,7 +374,7 @@ section#pro {
 }
 
 .button:active {
-    background-color: mediumslateblue;
+    background-color: $primary-color;
 }
 
 .btn-purple { /* Button */
@@ -368,7 +382,7 @@ section#pro {
     color: white;
     margin: 10px;
     padding: 15px 50px;
-    background-color: mediumslateblue;
+    background-color: $primary-color;
     border: none;
     text-align: center;
     text-decoration: none;
@@ -488,7 +502,7 @@ input[type=submit] {
     color: white;
     margin: 8px 0;
     padding: 16px 20px;
-    background: mediumslateblue;
+    background: $primary-color;
     cursor: pointer;
     border: none;
     border-top-right-radius: 60px;
