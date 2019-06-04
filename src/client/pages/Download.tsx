@@ -74,7 +74,7 @@ export const Developers: React.FunctionComponent = () => (
                             </div>
                         </Content>
                     </section>
-                    <section id="docs" style={{ backgroundColor: "linear-gradient(120deg, #0A0056, #160D58)", backgroundImage: "url:(/assets/images/pattern.png)" }}>
+                    <section id="docs" style={{ background: "linear-gradient(120deg, #0A0056, #160D58)" }}>
                         <Content>
                             <div className={css.hook}>
                                 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAABXElEQVRoQ+2Z7U0DMQyGn26AJwAmKGxQNmADGKFMAN0EJihMABvACN3A3aDIUioFdB9KArlc5Ugn9ccleb9yteIFMx+LmePHCUzt4KgDqnoG3AH3wFVFwDvgC3gQEfvdOQYJqKoB3gIXFYH/3moPXPeR6CUQlP+cGPyRzJuI3HaJOETgCXicUPl4652IXKYSMPX/LfMiMhbfQwy47/0hB34s8NdOOIGgqDuQGy2PkEcoNzthnkfII+QROpFSQlVXUdG4EZEPM1dV266FgJsA3AjEwwhsgPemi7nUI9RcNeoEpv4fcAfcgdQMFL7vX6FCAYunuwPFEhYu4A4UClg83R0AXoC1iNh1dzMj5WZOWgNvKp40AWvvLKOsPId2z2wi1FKDg5yvkDX3zIXzFk5sMoFwM2AdmtcWSGQRCCTMCWux2hOfiarGZBOoijJjs9FGd8aaVac4gapyd2z2DaYt6TEzBOYiAAAAAElFTkSuQmCC"/>
@@ -88,11 +88,11 @@ export const Developers: React.FunctionComponent = () => (
                             </div>
                         </Content>
                     </section>
-                    <section id="integrations" style={{ backgroundImage: 'url(/assets/images/lol-background.jpg)', backgroundColor: "white" }}>
+                    <section id="integrations" style={{ backgroundImage: 'url(/assets/images/riot-integrations.jpg)', backgroundColor: "white" }}>
                         <ContentOpacityLayer>
                             <div className={css.hook}>
                                 <span className={css['coming-soon']}>Coming Soon</span>
-                                <img style={{ display: "block" }} src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAACVElEQVRoQ+1ZQXLaQBDswWXCzaAPxPkB/oH9AvsHdi6B3MgtBRddROUGN4tT7B/YL/ATgB/ABxC52U6ZcS0lqlIgLaPVAnJldZ7d6Z6eZXcawgf/6IPjhyNwaAWtKtD5Hl3zgltEqCtizBhRifrBbe1+V0StEPBvourrJ35aAV8Hq4iUX+jCv6vNbROxQqDdmA3TwK8AKxLdgXdWOAKdb1ELJe5JgDHoazes3UlipTG5FZBUf5cq5CbQac5YWi0VF4Re7pz/5tNu9rMZnZaYeyDUCTjNAjRrLAMTMEYLoh+/wtpEuj6VgAJ/xDwEoSrdzEocY/5GdCYlkUqg05g9gHBpBVTWTRiPwcC7kizTEYj2Xv0YsWqnbuh9yUcg4+GUJMsSIz3s6Qo4AlnqvRnrFMh6QeWrt1NgswKHVkA6T6T+CrUbszkRTmy3hsl+unlC+xZqN6MbAvsAPpsktrkmbZ7Y+jJU09bfCo8KQSJhnthKQFUxVuK3zYqa7JWkgohArEJkktT2mvUL7v8gUJQWAmMcDLylZbP6tiqwtEwqPNz1RCZptSRTQEtgaVQx+0UAn1R9RbqQA82GGozx8QudJxljhZ0HliQYYybq67ykwhJw88ChX6NOAaeA5GbSxORuIcOBZsogv/yMB4XttYIrw3liGoSeyIu1aS1Oj5+pvn7ZGM0TNqzF2JkeScdK3Z8XWR6DzPizIKrnNndVC8QOdV/Z67qJTCXtDjytiy1oyamy19+IWlLw2rdQzjO4t+Vbn9N7Q2KYyBEwLJy1ZU4Ba6U03OgdpkcdQNTLFsYAAAAASUVORK5CYII="/>
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAACW0lEQVRoQ+1ZQU7bQBT9PwYWsCBVwqJyJOAGya6bWPQE5Qa0N0hvkBuQG9DegJ6Aytl0F+cGQUroIkFxF7AgiT8ay0ghtcffmTE4ynj95897/3175n0jbPiDG44fDIH3VlCrAhVneFECbAFAPSLmBUCde7f2My+iWgiUz6bl3eDxZgn4Kl5vVtr/7P/+4OsmooXAkTPqScC/YPbGrt0oHIFq866FSJccYAHRt/tu7QcnlhujrACz+rmpoIMAcasl4saurbzn8n7SZOVPf092doNLxPCrcpIF6BqxAyLw5rPSd//PxwF3fSKBEPzeooeAZW4yHXEE5M+frAaXRCKBanN0jQhfdIDKmoMIfk269jlnXTIBZzh96+ovAR6MXftUicCRM8r0cnI2yxLDfdkTFTAEspQ7JtYoYFpo21uI6ydk54CPgIeKhdS1PNFPSO9ClebwKwK2EeFYFxKFPLF+IvVmKNzWzuLRKwKJOD+RSkBUTChRQrxSqJ6upf+pwCIQed6pLhQqeVYPuO0gUJgWIuqPu7WXkU0oZKoCUfuIqUPejiy1szK/xNGgql0E8BBTfakC1fc1NK/VIOrPrIOzuMFYYf1AyICoHwB0ZLOkwhIwfsD4gdSPojzAtNDGt1DVGWY2NERwS0DthXVwLRrEWjycr+MnRJ5J12ad/NpGi2LTubVfXz1s1vETWkaL0XDX49pK2c+LLJdBAvo3f7LqysNd0QLReL0jfh/JHJnYdOLWpFPstJYUCgKE4/UWFzzrNqr4Ncx9eep1OncEihsYAooFVF5uFFAuoWKCZ4iyHUBrDEdFAAAAAElFTkSuQmCC" />
                                 <h2 style={{ fontSize: "28px", fontFamily: "'Source Code Pro', monospace" }}>Riot Integrations</h2>
                                 <h3>Connect your game to Riot.</h3>
                                 <p>Integrate things like game statistics, or a spectate match button, straight into Riot.</p>

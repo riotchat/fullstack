@@ -119,6 +119,8 @@
     "request": "^2.88.0",
     "rimraf": "^2.6.3",
     "sass-loader": "^7.1.0",
+    "simplebar": "^4.0.0",
+    "simplebar-react": "^1.0.0",
     "style-loader": "^0.23.1",
     "ts-jest": "^24.0.2",
     "tsc-watch": "^1.0.31",

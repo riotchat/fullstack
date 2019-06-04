@@ -131,6 +131,10 @@
                 /*&.active {
                     background-color: grey;
                 }*/
+
+                :hover {
+                    opacity: .7;
+                }
             }
 
             @include media(desktop) {

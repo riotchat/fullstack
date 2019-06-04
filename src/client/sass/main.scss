@@ -103,7 +103,7 @@ hr {
 
 .coming-soon {
     color: white;
-    margin: 0;
+    margin: 0 0 10px 0;
     padding: 2px 5px;
     font-size: 12px;
     background: $primary-color;
@@ -118,7 +118,7 @@ header {
     height: 800px;
     background-image: url("/assets/images/header.png");
     background-size: cover;
-    /*background-position: center;*/
+    background-position: center;
     background-repeat: no-repeat;
 }
 
@@ -224,7 +224,8 @@ section:nth-last-child(odd) { /* Shadow on last section */
 }
 
 section#pro {
-    background: linear-gradient(#9987F5, #EA86F3)
+    /*background: linear-gradient(#9987F5, #EA86F3)*/
+    background: linear-gradient(to top, #9795f0 0%, #fbc8d4 100%);
 }
 
 .price-table {
@@ -380,7 +381,7 @@ section#pro {
 .btn-purple { /* Button */
     display: inline-block;
     color: white;
-    margin: 10px;
+    margin: 10px 0;
     padding: 15px 50px;
     background-color: $primary-color;
     border: none;

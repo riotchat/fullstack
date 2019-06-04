@@ -151,7 +151,7 @@ export const Home: React.FunctionComponent = () => (
             <section id="pro" style={{background: 'linear-gradient(#9987F5, #EA86F3)'}}>
                 <Content>
                     <div className={css.hook}>
-                        <h1 className={logo}>Riot<span className={css.pro}>PRO</span></h1>
+                        <h1 className={css['pro-title']}>Riot<span className={css.pro}>PRO</span></h1>
                         <h2>Take your riot to the next level.</h2>
                         <p>Want your server to stand out? With Riot PRO, get the latest, cutting edge technology, right
                             for your community.</p>
