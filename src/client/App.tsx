@@ -16,13 +16,11 @@ console.log(`The App version is ${getVersion()}`);
 
 const AppImpl = () => (
     <Switch>
-        <SimpleBar>
-            <Route exact path='/' component={Home} />
-            <Route exact path='/branding' component={Branding} />
-            <Route path='/developers' component={Developers} />
-            <Route path='/download' component={Download} />
-            <Route component={Error404} />
-        </SimpleBar>
+        <Route exact path='/' component={Home} />
+        <Route exact path='/branding' component={Branding} />
+        <Route path='/developers' component={Developers} />
+        <Route path='/download' component={Download} />
+        <Route component={Error404} />
     </Switch>
 );
 

@@ -12,7 +12,9 @@ export const Error404: React.FunctionComponent = () => (
             <img src="/assets/images/404.png" width="100%" style={{ maxWidth: "400px" }} />
             <h1>You seem lost.</h1>
             <p>Click <Link to="/home">here</Link> to go back to the main page.</p>
-            <a style={{textTransform: "uppercase", cursor: "pointer"}} className={css['btn-purple']}>Play Sokoban Muliplayer instead</a>
+            <div className={css.buttons}>
+                <a style={{textTransform: "uppercase", cursor: "pointer"}} className={css['btn-purple']}>Play Sokoban Muliplayer instead</a>
+            </div>
         </div>
     </div>
 );

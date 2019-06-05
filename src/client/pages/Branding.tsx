@@ -167,12 +167,14 @@ export const Branding: React.FunctionComponent = () => (
                     </div>
                 </div>
             </section>
-            <section id="icons">
-                <div className={css.content}>
-                    <h1>Iconography</h1>
-                    <p>We use Atisa's gorgeous Boxicons. Licensed under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons 4.0 license</a>.</p>
-                    <a className={css.btnPurple} href="https://github.com/atisawd/boxicons" target="_blank">View on GitHub</a>
-                </div>
+            <section id="icons" style={{ backgroundImage: "url('/assets/images/iconography.png')" }}>
+                <ContentOpacityLayer>
+                    <div className={css.hook}>
+                        <h1>Iconography</h1>
+                        <p>We use Atisa's gorgeous Boxicons. Licensed under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons 4.0 license</a>.</p>
+                        <a className={css.btnPurple} href="https://github.com/atisawd/boxicons" target="_blank">View on GitHub</a>
+                    </div>
+                </ContentOpacityLayer>
             </section>
             <section id="download" style={{ backgroundColor: "#7B68EE", backgroundImage: "url('/assets/images/pattern/pattern.png')", backgroundSize: "contain" }}>
             <ContentOpacityLayer>

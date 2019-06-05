@@ -74,7 +74,7 @@ export const Developers: React.FunctionComponent = () => (
                             </div>
                         </Content>
                     </section>
-                    <section id="docs" style={{ backgroundColor: "linear-gradient(120deg, #0A0056, #160D58)", backgroundImage: "url:(/assets/images/pattern.png)" }}>
+                    <section id="docs" style={{ background: "linear-gradient(120deg, #0A0056, #160D58)" }}>
                         <Content>
                             <div className={css.hook}>
                                 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAABXElEQVRoQ+2Z7U0DMQyGn26AJwAmKGxQNmADGKFMAN0EJihMABvACN3A3aDIUioFdB9KArlc5Ugn9ccleb9yteIFMx+LmePHCUzt4KgDqnoG3AH3wFVFwDvgC3gQEfvdOQYJqKoB3gIXFYH/3moPXPeR6CUQlP+cGPyRzJuI3HaJOETgCXicUPl4652IXKYSMPX/LfMiMhbfQwy47/0hB34s8NdOOIGgqDuQGy2PkEcoNzthnkfII+QROpFSQlVXUdG4EZEPM1dV266FgJsA3AjEwwhsgPemi7nUI9RcNeoEpv4fcAfcgdQMFL7vX6FCAYunuwPFEhYu4A4UClg83R0AXoC1iNh1dzMj5WZOWgNvKp40AWvvLKOsPId2z2wi1FKDg5yvkDX3zIXzFk5sMoFwM2AdmtcWSGQRCCTMCWux2hOfiarGZBOoijJjs9FGd8aaVac4gapyd2z2DaYt6TEzBOYiAAAAAElFTkSuQmCC"/>

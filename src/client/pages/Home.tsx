@@ -78,8 +78,9 @@ export const Home: React.FunctionComponent = () => (
                 <div className={css.header}>
                     <div className={css['header-info']}>
                         <div className={css.text}>
-                            <h1>Let your voice be heard.</h1>
-                            <p>Let's riot together.</p>
+                            {/*<h1>Let your voice be heard.</h1>*/}
+                            <h1 className={css.headerTitle}>Let's riot <span className={css.gradient}>together</span>.</h1>
+                            <p>The perfect voice & chat system for gamers is here.</p>
                         </div>
                         <div className={css.buttons}>
                             {/* <a id="download" href="riot.html" class="button" style="background-color: mediumslateblue"><i class='bx bxl-windows'></i> Download</a> */}
@@ -143,7 +144,7 @@ export const Home: React.FunctionComponent = () => (
                             we can create a transparent layer between us and the user. Contribute, create your own
                             bot or make your own version of the Riot client.</p>
                         <br />
-                        <a href="/developers" className={css['btn-purple']}>Log into the Developer Portal</a>
+                        <a href="/developers" className={css['btn-purple']}>Visit the Developer Portal</a>
                         <a href="https://github.com/riotchat" className={css.button} target="_blank">View on Github</a>
                     </div>
                 </ContentOpacityLayer>
