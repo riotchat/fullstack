@@ -106,7 +106,7 @@ export const Branding: React.FunctionComponent = () => (
                 <div className={css.header}>
                     <div className={css['header-info']}>
                         <div className={css.text}>
-                            <h1>Branding</h1>
+                            <h1 className={css.headerTitle}>Branding</h1>
                             <p style={{ marginBottom: "20px" }}>Riot is a brand of the 21st Century, and we've got the design to prove it.</p>
                             <p>To use any of our material in any press, please contact us beforehand.</p>
                         </div>

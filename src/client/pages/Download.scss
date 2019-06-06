@@ -1,8 +1,11 @@
+@import "../sass/colors";
 @import "../sass/mixins";
 
 .view-platforms {
+    user-select: none;
+
     & i {
-        margin-right: 10px;
+        margin-left: 5px;
 
         transform: rotate(-90deg);
         transition: transform 0.1s ease-in;
@@ -34,6 +37,10 @@
     font-size: 1.5em;
 }
 
+.os-icon {
+    margin-right: 15px;
+}
+
 .dl-div {
     margin: 10px 0;
 }
@@ -48,6 +55,44 @@
     font-size: 12px;
 }
 
+%button {
+    $padding: 15px;
+    border: none;
+    margin: 10px;
+    padding: $padding 32px;
+
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 4px;
+    transition: .3s;
+
+    @include media(mobile) {
+        /*width: calc(100% - #{$padding * 1.5});*/
+        margin: 0 0 10px 0;
+        width: 100%;
+    }
+}
+
+.buttonPrimary {
+    @extend %button;
+    color: $dark-color;
+    background: $light-color;
+     
+    &:hover { background: #8A7BED; }
+    &:active { background: #6859CC; }
+}
+
+.buttonSecondary {
+    @extend %button;
+    color: $light-color;
+    background: $dark-color;
+
+    &:hover { background: #464646; }
+    &:active { background: #2D2D2D; }
+}
+
 .dl-button {
     background-color: mediumslateblue; /* Green */
     border: none;
@@ -60,9 +105,25 @@
     border-radius: 4px;
     user-select: none;
     margin-left: 10px;
+    transition: 0.3s;
+
+    &:hover { background: #8A7BED; }
+    &:active { background: #6859CC; }
+    
+    &.nightly {
+        color: #EFEFEF;
+        background: #464646;
+
+        &:hover { background: #606060; }
+        &:active { background: #2D2D2D; }
+    }
 
     &:first-child {
         margin-left: 0px;
+    }
+
+    @include media(mobile) {
+        width: 50%;
     }
 }
 

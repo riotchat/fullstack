@@ -9,7 +9,7 @@ export const Error404: React.FunctionComponent = () => (
     <div style={{ width: "100%", height: "100%", background: "linear-gradient(-20deg, #00D1D8, #009FA8)" }}>
         <Navigation />
         <div style={{ textAlign: "center" }}>
-            <img src="/assets/images/404.png" width="100%" style={{ maxWidth: "400px" }} />
+            <img src="/assets/images/404.png" width="100%" style={{ maxWidth: "600px" }} />
             <h1>You seem lost.</h1>
             <p>Click <Link to="/">here</Link> to go back to the main page.</p>
             {/*<div className={css.buttons}>

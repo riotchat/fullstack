@@ -14,27 +14,20 @@ const downloadCss = require('./Download.scss');
 const googlePlayButton = require('../../../assets/images/googleplay-button.png');
 const appStoreButton = require('../../../assets/images/appstore-button.svg');
 
+let os: "WIN" | "MAC" | "LINUX" | "ANDROID" | "IOS" | "UNKNOWN" = "UNKNOWN";
+
+if(platform.os.family.indexOf("Windows") !== -1) os = "WIN";
+else if(platform.os.family === "OS X") os = "MAC";
+else if(platform.os.family === "Android") os = "ANDROID";
+else if(platform.os.family === "iOS") os = "IOS";
+
 class DownloadButtons extends React.Component<{}, {
-    os: "WIN" | "MAC" | "LINUX" | "ANDROID" | "IOS" | "UNKNOWN",
     allPlatforms: boolean
 }> {
     constructor(props) {
         super(props);
-        let os: "WIN" | "MAC" | "LINUX" | "ANDROID" | "IOS" | "UNKNOWN" = "UNKNOWN";
-        
-        /*if(platform === "Win32" || platform === "Win64") os = "WIN";
-        else if(platform === "Macintosh" || platform === "MacIntel") os = "MAC";
-        else if(platform === "Android") os = "ANDROID";
-        else if(platform.startsWith("iPhone") || platform.startsWith("iPod") || platform.startsWith("iPad")) os = "IOS";*/
-
-        console.log(platform);
-        if(platform.os.family.indexOf("Windows") !== -1) os = "WIN";
-        else if(platform.os.family === "OS X") os = "MAC";
-        else if(platform.os.family === "Android") os = "ANDROID";
-        else if(platform.os.family === "iOS") os = "IOS";
 
         this.state = {
-            os,
             allPlatforms: /* os === "UNKNOWN" */ true
         }
 
@@ -43,7 +36,6 @@ class DownloadButtons extends React.Component<{}, {
 
     toggleViewPlatforms() {
         this.setState({
-            os: this.state.os,
             allPlatforms: !this.state.allPlatforms
         })
     }
@@ -51,24 +43,24 @@ class DownloadButtons extends React.Component<{}, {
     render() {
         let buttons: React.ReactNode = null;
         // Windows
-        if(this.state.os === "WIN") buttons = (
+        if(os === "WIN") buttons = (
             <div className={css.buttons}>
-                <a className={css.buttonPrimary} href="/assets/downloads/win-stable" target="_blank"><i className={`${css['icon-os']} bx bxl-windows`}></i> Download for Windows</a>
-                <a className={css.buttonSecondary} href="/assets/downloads/win-nightly" target="_blank"><i className={`${css['icon-os']} bx bxs-moon`}></i> Download latest nightly build</a>
+                <a className={downloadCss.buttonPrimary} href="/assets/downloads/win-stable" target="_blank"><i className={`${css['icon-os']} bx bxl-windows`}></i> Download for Windows</a>
+                <a className={downloadCss.buttonSecondary} href="/assets/downloads/win-nightly" target="_blank"><i className={`${css['icon-os']} bx bxs-moon`}></i> Download latest nightly build</a>
             </div>
         );
         // macOS
-        else if(this.state.os === "MAC") buttons = (
+        else if(os === "MAC") buttons = (
             <div>
-                <a className={css.buttonPrimary} href="/assets/downloads/mac-stable" target="_blank"><i className={`${css['icon-os']} bx bxl-apple`}></i> Download for macOS</a>
-                <a className={css.buttonSecondary} href="/assets/downloads/mac-nightly" target="_blank"><i className={`${css['icon-os']} bx bxs-moon`}></i> Download latest nightly build</a>
+                <a className={downloadCss.buttonPrimary} href="/assets/downloads/mac-stable" target="_blank"><i className={`${css['icon-os']} bx bxl-apple`}></i> Download for macOS</a>
+                <a className={downloadCss.buttonSecondary} href="/assets/downloads/mac-nightly" target="_blank"><i className={`${css['icon-os']} bx bxs-moon`}></i> Download latest nightly build</a>
             </div>
         );
         // Linux
         // We can do this later as Linux is kinda confusing when it comes to installation packages
 
         // Android
-        else if(this.state.os === "ANDROID") buttons = (
+        else if(os === "ANDROID") buttons = (
             <div>
                 <a href='' target="_blank">
                     <img className={downloadCss['dl-appstore']} alt='Get it on Google Play' width="200px" src={googlePlayButton} />
@@ -77,7 +69,7 @@ class DownloadButtons extends React.Component<{}, {
             </div>
         )
         // iOS
-        else if(this.state.os === "IOS") buttons = (
+        else if(os === "IOS") buttons = (
             <div>
                 <a href='' target="_blank">
                     <img className={downloadCss['dl-appstore']}alt='Download on the App Store' width="200px" src={appStoreButton} />
@@ -96,32 +88,36 @@ class DownloadButtons extends React.Component<{}, {
                 { this.state.allPlatforms && (
                     <div className={downloadCss.allPlatforms}>
                         <div className={downloadCss['dl-div']}>
-                            <img src="assets/svg/windows.svg" height="48px" />
+                            <img className={downloadCss['os-icon']} src="assets/svg/windows.svg" height="48px" />
                             <div className={downloadCss['dl-name']}>
                                 <h1 className={downloadCss['os']}>Windows</h1>
-                                <span className={downloadCss['dl-version']}>Stable: 1.01 / Nightly 1.02</span>
+                                <span className={downloadCss['dl-version']}>Stable: 1.01 | Nightly 1.02</span>
                             </div>
                             <div className={downloadCss['dl-buttons']}>
-                                <a className={downloadCss['dl-button']}><i className={`${downloadCss['icon-os']} bx bx-download`} style={{ color: '#ffffff' }}></i></a>
-                                <a className={downloadCss['dl-button']}><i className={`${downloadCss['icon-os']} bx bx-download`} style={{ color: '#ffffff' }}></i> Nightly</a>
+                                <a className={downloadCss['dl-button']} href="/assets/downloads/win-stable" target="_blank"><i className={`${downloadCss['icon-os']} bx bx-download`} style={{ color: '#ffffff' }}></i></a>
+                                <a className={`${downloadCss['dl-button']} ${downloadCss.nightly}`} href="/assets/downloads/win-nightly" target="_blank">
+                                    <i className={`${downloadCss['icon-os']} bx bx-download`} style={{ color: '#ffffff' }}></i> Nightly
+                                </a>
                             </div>
                         </div>
                         <div className={downloadCss['dl-div']}>
-                            <img src="assets/svg/apple.svg" height="48px" />
+                            <img className={downloadCss['os-icon']} src="assets/svg/apple.svg" height="48px" />
                             <div className={downloadCss['dl-name']}>
                                 <h1 className={downloadCss['os']}>macOS</h1>
-                                <span className={downloadCss['dl-version']}>Stable: 1.01 / Nightly 1.02</span>
+                                <span className={downloadCss['dl-version']}>Stable: 1.01 | Nightly 1.02</span>
                             </div>
                             <div className={downloadCss['dl-buttons']}>
-                                <a className={downloadCss['dl-button']}><i className={`${downloadCss['icon-os']} bx bx-download`} style={{ color: '#ffffff' }}></i></a>
-                                <a className={downloadCss['dl-button']}><i className={`${downloadCss['icon-os']} bx bx-download`} style={{ color: '#ffffff' }}></i> Nightly</a>
+                                <a className={downloadCss['dl-button']} href="/assets/downloads/mac-stable" target="_blank"><i className={`${downloadCss['icon-os']} bx bx-download`} style={{ color: '#ffffff' }}></i></a>
+                                <a className={`${downloadCss['dl-button']} ${downloadCss.nightly}`} href="/assets/downloads/mac-nightly" target="_blank">
+                                    <i className={`${downloadCss['icon-os']} bx bx-download`} style={{ color: '#ffffff' }}></i> Nightly
+                                </a>
                             </div>
                         </div>
                         <div className={downloadCss['dl-div']}>
-                            <img src="assets/svg/linux.svg" height="48px" />
+                            <img className={downloadCss['os-icon']} src="assets/svg/linux.svg" height="48px" />
                             <div className={downloadCss['dl-name']}>
                                 <h1 className={downloadCss['os']}>Linux</h1>
-                                <span className={downloadCss['dl-version']}>Stable: 1.01 / Nightly 1.02</span>
+                                <span className={downloadCss['dl-version']}>Stable: 1.01 | Nightly 1.02</span>
                             </div>
                             <div className={downloadCss['dl-buttons']}>
                                 <select name="dl-choose">
@@ -129,14 +125,16 @@ class DownloadButtons extends React.Component<{}, {
                                     <option value="tar-pkg">tar.gz</option>
                                 </select>
                                 <a className={downloadCss['dl-button']}><i className={`${downloadCss['icon-os']} bx bx-download`} style={{ color: '#ffffff' }}></i></a>
-                                <a className={downloadCss['dl-button']}><i className={`${downloadCss['icon-os']} bx bx-download`} style={{ color: '#ffffff' }}></i> Nightly</a>
+                                <a className={`${downloadCss['dl-button']} ${downloadCss.nightly}`} target="_blank">
+                                    <i className={`${downloadCss['icon-os']} bx bx-download`} style={{ color: '#ffffff' }}></i> Nightly
+                                </a>
                             </div>
                         </div>
                         <div className={downloadCss['dl-div']}>
-                            <img src="assets/svg/apple.svg" height="48px" />
+                            <img className={downloadCss['os-icon']} src="assets/svg/apple.svg" height="48px" />
                             <div className={downloadCss['dl-name']}>
                                 <h1 className={downloadCss['os']}>iOS</h1>
-                                <span className={downloadCss['dl-version']}>Stable: 1.01 / Nightly 1.02</span>
+                                <span className={downloadCss['dl-version']}>Stable: 1.01</span>
                             </div>
                             <div className={downloadCss['dl-buttons']}>
                                 <a href="">
@@ -145,14 +143,16 @@ class DownloadButtons extends React.Component<{}, {
                             </div>
                         </div>
                         <div className={downloadCss['dl-div']}>
-                            <img src="assets/svg/android.svg" height="48px" />
+                            <img className={downloadCss['os-icon']} src="assets/svg/android.svg" height="48px" />
                             <div className={downloadCss['dl-name']}>
                                 <h1 className={downloadCss['os']}>Android</h1>
-                                <span className={downloadCss['dl-version']}>Stable: 1.01 / Nightly 1.02</span>
+                                <span className={downloadCss['dl-version']}>Stable: 1.01</span>
                             </div>
                             <div className={downloadCss['dl-buttons']}>
                                 <img alt='Get it on Google Play' src={googlePlayButton} height="52px" />
-                                <a className={downloadCss['dl-button']}><i className={`${downloadCss['icon-os']} bx bx-download`} style={{ color: '#ffffff' }}></i>Download APK</a>
+                                <a className={downloadCss['dl-button']} href="/assets/downloads/android-apk" target="_blank">
+                                    <i className={`${downloadCss['icon-os']} bx bx-download`} style={{ color: '#ffffff' }}></i> Download APK
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -176,7 +176,12 @@ export const Download: React.FunctionComponent = () => (
                 </section>
                 <section style={{ textAlign: 'center', backgroundImage: "url('/assets/images/pattern/pattern.png')", backgroundSize: "unset", backgroundPosition: "unset" }}>
                     <div className={css['content-download']} style={{ maxWidth: '1200px', margin: '0 auto' }}>
-                        <img className={css.screenshot} src="/assets/images/riot-ui.png" />
+                        { os === "ANDROID" || os === "IOS" ? (
+                            <img className={css.screenshot} src="/assets/images/riot-mobile-ui.png" style={{ maxWidth: "500px" }} />
+                        ) : (
+                            <img className={css.screenshot} src="/assets/images/riot-ui.png" />
+                        )}
+                        <br />
                         <a className={css.more} style={{ margin: '10px 0 50px 0' }} href="test">Looking for beta builds?</a>
                         <br /><br />
                     </div>
