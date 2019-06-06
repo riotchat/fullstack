@@ -61,10 +61,6 @@ input {
     vertical-align: middle;
 }
 
-.icon-os {
-    vertical-align: baseline;
-}
-
 hr {
     width: 242px;
     margin-right: 0;
@@ -78,6 +74,7 @@ br {
 }
 
 .headerTitle {
+    font-size: 48px;
     font-family: "Poppins", sans-serif;
 }
 
@@ -193,14 +190,10 @@ header .text p {
 }
 
 section {
-    /*height: 100%;*/
     width: 100%;
     position: relative;
     background-size: cover;
     background-position: center;
-    /*background-color: dimgrey;*/
-    //background: darkgrey;
-    /*margin: 100px 0;*/
 }
 
 section:last-child { /* Shadow on last section */
@@ -486,11 +479,9 @@ section#pro {
 
 /* ---------------------- Images ---------------------- */
 
-
-img {
-  /*display: block;*/
-  height: auto;
-  max-width: 100%;
+.image {
+    height: auto;
+    max-width: 100%;
     user-select: none;
 }
 
@@ -578,6 +569,11 @@ input:focus {
     box-shadow: 0 0 0 3px rgba(123, 104, 238, 0.7);
 }
 
+select:focus {
+    outline: 0;
+    box-shadow: 0 0 0 3px rgba(123, 104, 238, 0.7);
+}
+
 input[type=email] {
     width: calc(100% - 101px);
     padding: 16px 30px;
@@ -610,6 +606,12 @@ input[type=submit]:hover {
 
 input[type=submit]:active {
     background: #6859CC;
+}
+
+select {
+    padding: 15px 10px;
+    font-size: 16px;
+    border-radius: 4px;
 }
 
 /* ---------------------- Footer ---------------------- */

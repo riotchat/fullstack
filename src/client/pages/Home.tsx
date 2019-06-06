@@ -102,7 +102,7 @@ export const Home: React.FunctionComponent = () => (
                             on any computer.</p>
                     </div>
                     <div className={css['content-image']}>
-                        <img src="/assets/images/security.png" />
+                        <img className={css.image} src="/assets/images/security.png" />
                     </div>
                 </ContentOpacityLayer>
             </section>
@@ -121,7 +121,7 @@ export const Home: React.FunctionComponent = () => (
             <section id="communities" style={{backgroundImage: "url('/assets/images/communities.jpg')"}}>
                 <ContentOpacityLayer>
                     <div className={css['content-image']}>
-                        <img src="/assets/images/invites.png" />
+                        <img className={css.image} src="/assets/images/invites.png" />
                     </div>
                     <div className={css.hook}>
                         <img
