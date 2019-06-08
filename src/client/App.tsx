@@ -11,6 +11,8 @@ import { Home } from './pages/Home';
 import { Branding } from './pages/Branding';
 import { Developers } from './pages/Developers';
 import { Download } from './pages/Download';
+import { Pro } from './pages/Pro';
+import { Translate } from './pages/Translate';
 
 console.log(`The App version is ${getVersion()}`);
 
@@ -20,6 +22,8 @@ const AppImpl = () => (
         <Route exact path='/branding' component={Branding} />
         <Route path='/developers' component={Developers} />
         <Route path='/download' component={Download} />
+        <Route path='/pro' component={Pro} />
+        <Route path='/translate' component={Translate} />
         <Route component={Error404} />
     </Switch>
 );

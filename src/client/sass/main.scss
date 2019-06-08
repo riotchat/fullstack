@@ -9,32 +9,29 @@ body {
 
 /* ---------------------- Styling ---------------------- */
 
-h1 {
+h1 { /* Headers */
+    font-size: 48px;
+    line-height: 55px;
+    margin: 7px 0;
+}
+
+h2 { /* Features Title */
     font-size: 30px;
     margin: 7px 0;
 }
 
-.pro-title {
-    font-size: 60px;
-    font-weight: 400;
-    font-family: "VX Rocket", sans-serif;
-    user-select: none;
-}
-
-.pro-title .pro { /* Riot PRO Text */
-    margin-left: 12px;
-    font-size: 48px;
-    font-family: "Pro", sans-serif;
-    font-style: italic;
-    color: white;
-}
-
-h2 { /* Features Title */
+h3 { /* Features Subtitle - Riot PRO */
     margin: 5px 0;
     font-size: 30px;
 }
 
-h3 { /* Footer Menu Title */
+h4 { /* Subtitle */
+    margin: 10px 0;
+    user-select: none;
+}
+
+h5 { /* Footer Menu Title */
+    font-size: 1.17em;
     margin: 10px 0;
     user-select: none;
 }
@@ -51,6 +48,10 @@ form {
 
 input {
     font-family: "Open Sans", sans-serif;
+    user-select: none;
+}
+
+img {
     user-select: none;
 }
 
@@ -73,9 +74,25 @@ br {
     user-select: none;
 }
 
+.pro-title {
+    font-size: 60px;
+    font-weight: 400;
+    font-family: "VX Rocket", sans-serif;
+    user-select: none;
+}
+
+.pro-title .pro { /* Riot PRO Text */
+    margin-left: 12px;
+    font-size: 48px;
+    font-family: "Pro", sans-serif;
+    font-style: italic;
+    color: white;
+}
+
 .headerTitle {
     font-size: 48px;
     font-family: "Poppins", sans-serif;
+    margin-bottom: 12px;
 }
 
 .gradient {
@@ -128,6 +145,20 @@ br {
     user-select: none;
 }
 
+.riot-pro {
+    font-family: "VX Rocket", sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+    user-select: none;
+}
+
+.riot-pro-text {
+    margin-left: 5px;
+    font-family: "Pro", sans-serif;
+    font-style: italic;
+    font-size: 24px;
+}
+
 /* ---------------------- Header ---------------------- */
 
 header {
@@ -155,19 +186,15 @@ header {
     color: white;
     position: absolute;
     top: 50%;
-    left: 0px;
+    //left: 0px;
     margin: 30px;
     transform: translate(0%, -50%);
     /*margin: 100px auto;*/
     user-select: none;
-}
 
-header .text h1 {
-    margin: 0;
-}
-
-header .text p {
-    margin: 0 0 50px 0;
+    @include media(mobile) {
+        margin: 10px;
+    }
 }
 
 /* ------------ Background ------------ */
@@ -380,7 +407,7 @@ section#pro {
 .button { /* Button */
     display: inline-block;
     color: white;
-    margin: 10px 10px 10px 0px;
+    margin: 10px;
     padding: 15px 50px;
     background-color: grey;
     border: none;
@@ -409,7 +436,7 @@ section#pro {
 .btn-purple { /* Button */
     display: inline-block;
     color: white;
-    margin: 10px 10px 10px 0px;
+    margin: 10px;
     padding: 15px 50px;
     background-color: $primary-color;
     border: none;
@@ -528,12 +555,12 @@ section#pro {
 
 input:focus {
     outline: 0;
-    box-shadow: 0 0 0 3px rgba(123, 104, 238, 0.7);
+    box-shadow: 0 0 0 2px rgba(123, 104, 238, 0.7);
 }
 
 select:focus {
     outline: 0;
-    box-shadow: 0 0 0 3px rgba(123, 104, 238, 0.7);
+    box-shadow: 0 0 0 2px rgba(123, 104, 238, 0.7);
 }
 
 input[type=email] {
@@ -580,7 +607,7 @@ select {
 
 @media only screen and (max-width: 1024px) {
     
-    h1 {
+    h2 {
         font-size: 45px;
     }
     

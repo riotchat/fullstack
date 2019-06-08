@@ -28,7 +28,7 @@ class DownloadButtons extends React.Component<{}, {
         super(props);
 
         this.state = {
-            allPlatforms: /* os === "UNKNOWN" */ true
+            allPlatforms: os === "UNKNOWN"
         }
 
         this.toggleViewPlatforms = this.toggleViewPlatforms.bind(this);
@@ -86,6 +86,7 @@ class DownloadButtons extends React.Component<{}, {
                 <br /><br />
                 
                 { this.state.allPlatforms && (
+                    <div style={{ margin: "10px" }}>
                     <div className={downloadCss.allPlatforms}>
                         <div className={downloadCss['dl-div']}>
                             <img className={downloadCss['os-icon']} src="assets/svg/windows.svg" height="48px" />
@@ -155,6 +156,7 @@ class DownloadButtons extends React.Component<{}, {
                                 </a>
                             </div>
                         </div>
+                        </div>
                     </div>
                 )}
             </div>
@@ -169,7 +171,7 @@ export const Download: React.FunctionComponent = () => (
                 <Navigation fixed={true} />
                 <section style={{ textAlign: 'center', paddingTop: '100px' }}>
                     <div className={css['content-download']}>
-                        <h1 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '50px' }}>Download Riot</h1>
+                        <h1 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '42px' }}>Download Riot</h1>
                         <p style={{ marginBottom: '40px' }} >Get out there and riot with others.</p>
                         <DownloadButtons />
                     </div>

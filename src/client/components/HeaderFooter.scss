@@ -13,10 +13,14 @@
 /* -- Navbar -- */
 .navigation {
     height: 70px;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0));
+    /*background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0));*/
     width: 100%;
     z-index: 10;
     position: relative;
+
+    @include media(mobile) {
+        background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0));
+    }
 
     .logo {
         line-height: 70px;
@@ -31,7 +35,8 @@
         opacity: 1;
         transition: .3s;
         user-select: none;
-        :hover {
+        
+        &:hover {
             opacity: 0.7;
         }
     }
@@ -132,7 +137,7 @@
                     background-color: grey;
                 }*/
 
-                :hover {
+                &:hover {
                     opacity: .7;
                 }
             }

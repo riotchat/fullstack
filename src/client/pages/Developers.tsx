@@ -94,7 +94,7 @@ export const Developers: React.FunctionComponent = () => (
                                 <span className={css['coming-soon']}>Coming Soon</span>
                                 <img style={{ display: "block" }} src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAACVElEQVRoQ+1ZQXLaQBDswWXCzaAPxPkB/oH9AvsHdi6B3MgtBRddROUGN4tT7B/YL/ATgB/ABxC52U6ZcS0lqlIgLaPVAnJldZ7d6Z6eZXcawgf/6IPjhyNwaAWtKtD5Hl3zgltEqCtizBhRifrBbe1+V0StEPBvourrJ35aAV8Hq4iUX+jCv6vNbROxQqDdmA3TwK8AKxLdgXdWOAKdb1ELJe5JgDHoazes3UlipTG5FZBUf5cq5CbQac5YWi0VF4Re7pz/5tNu9rMZnZaYeyDUCTjNAjRrLAMTMEYLoh+/wtpEuj6VgAJ/xDwEoSrdzEocY/5GdCYlkUqg05g9gHBpBVTWTRiPwcC7kizTEYj2Xv0YsWqnbuh9yUcg4+GUJMsSIz3s6Qo4AlnqvRnrFMh6QeWrt1NgswKHVkA6T6T+CrUbszkRTmy3hsl+unlC+xZqN6MbAvsAPpsktrkmbZ7Y+jJU09bfCo8KQSJhnthKQFUxVuK3zYqa7JWkgohArEJkktT2mvUL7v8gUJQWAmMcDLylZbP6tiqwtEwqPNz1RCZptSRTQEtgaVQx+0UAn1R9RbqQA82GGozx8QudJxljhZ0HliQYYybq67ykwhJw88ChX6NOAaeA5GbSxORuIcOBZsogv/yMB4XttYIrw3liGoSeyIu1aS1Oj5+pvn7ZGM0TNqzF2JkeScdK3Z8XWR6DzPizIKrnNndVC8QOdV/Z67qJTCXtDjytiy1oyamy19+IWlLw2rdQzjO4t+Vbn9N7Q2KYyBEwLJy1ZU4Ba6U03OgdpkcdQNTLFsYAAAAASUVORK5CYII="/>
                                 <h2 style={{ fontSize: "28px", fontFamily: "'Source Code Pro', monospace" }}>Riot Integrations</h2>
-                                <h3>Connect your game to Riot.</h3>
+                                <h4>Connect your game to Riot.</h4>
                                 <p>Integrate things like game statistics, or a spectate match button, straight into Riot.</p>
                                 <p>Contributions are always welcome. Please read our commit policy before submitting an issue request.</p>
                             </div>

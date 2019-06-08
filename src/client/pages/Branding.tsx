@@ -156,7 +156,7 @@ export const Branding: React.FunctionComponent = () => (
             <section id="colors">
                 <div className={css.content}>
                     <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAADmElEQVRoQ+2ZUU7bQBCG/1lQpEpt7JV5b7hBeoLSE8ANCCcgnIBwAugJCCcgR4ATQE8AvMeyTStVQsJTrYmR4+zGu7aTKhJ+TGZn55uZnRmvCRv+0Ibbjw+A/x3B1iLwN4p6LyLdZ+Y9AD5APgH9HJCBe4AfiehmKxW3n6W8bwO+EQBHkf8s0mNmDAjouRjEwCMRxp1UXH2S8tFlbVG2FkDB8CFl3m74EEbdVPwkKWNXTc4Az9H0ICW6bMXwgrUMxIL5qCt3Ji4QTgBJEp6CMXLZwFmWMPK84Mx2nRXALGXOwRjYKm4kRxh7XnBko8MKII6n1wQ6qFTIOOlAZCnwgnQAwmnlGpOAJUQlQJKEl1aeZ5x4Mrgo2pNE4agRBOPMk8HSlF0KoA4sE13beLHLQparSNYbKH1YWO8QKcHixxcpb8yBMvyj8j6h9MG22lgDOEZKVSePxa6pxBojkEThBQjHNt7PZDTh1qWQNWhx4yWppAUwhr6KhjBSnTU7xCI91JXcOgDLoqAFaHz4loFaRkp3bspFQsloAeI4VLnvNNtUBWfuf4tIlfWp2cn3g93y7wsAf6Ko/0rpndYgxlkHYtxKnXcifhPeYvGtPMUuABjTp27oaxhqXKKpYBqA6QRE+2UlHRa75bG39mGvC8W48mQwN84sAMRxeFd8Ecn3qlM96tppWsfMt77cUS9M789iBOKQDfmvGxWGIJy3bagRAIh9P5C1AFQtprcXj6zOP7/V+bnZZx0gnh/MOd0+AuuwzmKPjQZgxi9fBu8XBdpGFkfTGyL6buGM9YtoSrl1GV2/tfM7MuPJg+iXp1JdI6uuLC12ZJUW6h6JCF/N5RPJNsSe7i7JbZRQO7TVkRlXXYhh7tFshEGqnHeYgzAjIWBSlCtD6oe5KFSXTlqPtNKRNR21aJiC2QJimwsv53G6jY6s01H3jLm/0OhfCavPzcxCXSmsa7y2jObKTFNp046s1pfHgZUAZC/1SNVZ8JpsoFurm+vr7tHatYqTARWH2EVX9cVW08spjTVtplElgNo/icJxsT67eMgk21YaWQGsAmLtADOIZnedhXCUx+K6UbWOQL7B7yjae0U6aVSd1nmIdZ7JvhcgHTIwdAVR840H0avzOUlni3MEikpmIIMZiHGaLAxnT9sQB219oVzaiV1zcjZNqhuDPoN7APXz6KjxYTZVXrTl+dy+RhFwhVyF/AfAKrzqonPjI/APzgDnQCNJcuAAAAAASUVORK5CYII=" />
-                    <h1>Brand Colors</h1>
+                    <h2>Brand Colors</h2>
                     <p>Here are some of the colors we use the most.</p>
                     <div className={brandingCss.colorWrapper}>
                         <ColorBox name="Rioting" red={123} green={104} blue={238} />
@@ -170,7 +170,7 @@ export const Branding: React.FunctionComponent = () => (
             <section id="icons" style={{ backgroundImage: "url('/assets/images/iconography.png')" }}>
                 <ContentOpacityLayer>
                     <div className={css.hook}>
-                        <h1>Iconography</h1>
+                        <h2>Iconography</h2>
                         <p>We use Atisa's gorgeous Boxicons. Licensed under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons 4.0 license</a>.</p>
                         <a className={css.btnPurple} href="https://github.com/atisawd/boxicons" target="_blank">View on GitHub</a>
                     </div>
@@ -180,7 +180,7 @@ export const Branding: React.FunctionComponent = () => (
             <ContentOpacityLayer>
                 <div className={css.content}>
                     <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAABcElEQVRoQ+2ZQW7CQAxF7UpVlzRwkPYI3KRhgZQzwIYNnCFSFw034QjtQSCwREi4ygKaRdOxx55UILNCwuP5/7+JRwoIN/7BG9cPbuC/CTqBuyEwL3YkMbMshyb0TZo0wt2ABF+r1glcwvAj5EcoMgE/QsrgfAr5EerrCM2LbQWAb8r9mMtpvSxHOadY9Az0Y4IvvjEoMrDI6+fTE20A4YWTjriG4OvxiONFle25a0UGmqbJTESIFxO4pDKb1q/wQBtEGHCT+quOCA5wxvHqPfuU9hMTsDahER9N4GqiqHME+pCm1q4nwMmqzKrYHtEELExoxasJ/NzCMXeEbFx2EVITiDNhI96MgGi8Ro7L5ARYJozFmxIIjVftuOyFQJeJVOKTEPhtvFqMy14JtE003zUXVeiCMxujoY1S/e4GUiXL7Xv/BKTvPLnJcetC/yMECbgBbtQddU5AGWDy5cFnILkC5QZuQBmgerkTUEeobPANQYjBMbmRM/QAAAAASUVORK5CYII=" />
-                    <h1>Download our press kit</h1>
+                    <h2>Download our press kit</h2>
                     <p>Includes full size logos, promotional images and more.</p>
                     {/*<div className={css.contentImage}>*/}
                         <a className={css.btnPurple} href="/assets/downloads/branding/branding.zip" download="RiotBranding.zip">Download Kit</a>

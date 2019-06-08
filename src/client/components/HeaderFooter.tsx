@@ -50,7 +50,7 @@ export class Navigation extends React.Component<{ fixed?: boolean }, { openMenu:
 
 export const FooterMenu: React.FunctionComponent<FooterMenuProps> = (props) => (
     <div className={css['footer-menu']}>
-        <h3>{props.header}</h3>
+        <h5>{props.header}</h5>
         <ul>
             {props.children && React.Children.map(props.children, (child, index) =>
                 <li key={index}>{child}</li>)}
