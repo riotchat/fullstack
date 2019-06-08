@@ -1,9 +1,7 @@
-import * as bodyParser from 'body-parser';
 import { Router } from 'express';
+import * as bodyParser from 'body-parser';
 
-export function apiRouter() {
-  const router = Router();
-  router.use(bodyParser.json());
+const router = Router();
+export default router;
 
-  return router;
-}
+router.use(bodyParser.json());
