@@ -5412,6 +5412,13 @@ lodash.uniq@^4.5.0:
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
   integrity sha512-cQKh8igo5QUhZ7lg38DYWAxMvjSAKG0A8wGSVimP07SIUEK2UO+arSRKbRZWtelMtN5V0Hkwh5ryOto/SshYIg==
 
+log74@1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/log74/-/log74-1.0.2.tgz#af2df663850eab7af883514822e0a197a37e8a6c"
+  integrity sha512-DM0vwnIRAHAvDBGSk2zh0QGKIUvIZtNrwjoUpxeYo3A5FC+9cdtoIFbAX33CYoV4EyxBQpB1tKMaoEIwh8Cu1A==
+  dependencies:
+    chalk "^2.4.2"
+
 loglevel@^1.6.2:
   version "1.6.2"
   resolved "https://registry.yarnpkg.com/loglevel/-/loglevel-1.6.2.tgz#668c77948a03dbd22502a3513ace1f62a80cc372"
