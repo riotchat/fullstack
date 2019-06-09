@@ -95,7 +95,7 @@ module.exports = {
         ],
       },
       {
-        test: /.jpe?g$|.gif$|.png$|.svg$|.woff$|.woff2$|.ttf$|.eot$/,
+        test: /.jpe?g$|.gif$|.png$|.svg$|.woff$|.woff2$|.ttf$|.otf$|.eot$/,
         use: 'url-loader?limit=10000',
       },
     ],

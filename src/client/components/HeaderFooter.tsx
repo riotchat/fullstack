@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Link, NavLink } from 'react-router-dom';
 import { useTranslation, Translation } from 'react-i18next';
-import SimpleBar from 'simplebar-react';
+import Scrollbars from 'react-custom-scrollbars';
 
 const css = require('./HeaderFooter.scss');
 const homeCss = require('../sass/main.scss');
@@ -25,19 +25,36 @@ const Language: React.FunctionComponent<{code: string}> = (props) => {
     )
 }
 
-export class Navigation extends React.Component<{ fixed?: boolean }, { openMenu: boolean }> {
+export class Navigation extends React.Component<{ fixed?: boolean }, { openMenu: boolean, openLanguageMenu: boolean }> {
     constructor(props) {
         super(props);
         this.state = {
-            openMenu: false
+            openMenu: false,
+            openLanguageMenu: false
         }
         
-        this.onChange = this.onChange.bind(this);
+        this.onMenuChange = this.onMenuChange.bind(this);
+        this.onLanguageMenuChange = this.onLanguageMenuChange.bind(this);
+
+        (this as any).languageCheckbox = React.createRef();
     }
 
-    onChange(e: React.ChangeEvent) {
+    onMenuChange(e: React.ChangeEvent) {
         this.setState({
-            openMenu: (e.target as any).checked
+            openMenu: (e.target as any).checked,
+            openLanguageMenu: false
+        });
+        (this as any).languageCheckbox.current.isSelected = false;
+    }
+
+    onLanguageMenuChange(e: React.ChangeEvent) {
+        if(!this.state.openMenu) {
+            (this as any).languageCheckbox.current.isSelected = false;
+            return;
+        }
+        this.setState({
+            openMenu: this.state.openMenu,
+            openLanguageMenu: (e.target as any).checked
         });
     }
 
@@ -49,10 +66,12 @@ export class Navigation extends React.Component<{ fixed?: boolean }, { openMenu:
                     <nav className={`${css.navigation} ${this.props.fixed ? css.fixed : ""} ${this.state.openMenu ? css.active : ""}`}>
                         <div className={`${css.bkg} ${this.state.openMenu ? css.active : ""}`} />
                         <Link to="/" className={css.logo}>RIOT</Link>
-                        <input className={css['menu-btn']} type="checkbox" id="menu-btn" onChange={this.onChange} />
+                        <input className={css['menu-btn']} type="checkbox" id="menu-btn" onChange={this.onMenuChange} />
+                        <input className={css['language-menu-btn']} type="checkbox" id="languagemenu-btn" onChange={this.onLanguageMenuChange} ref={(this as any).languageCheckbox} />
                         <label className={css['menu-icon']} htmlFor="menu-btn">
                             <span className={css.navicon}></span>
                         </label>
+                        <label className={`${css['menu-icon']} ${css.languageButton}`} htmlFor="languagemenu-btn"></label>
                         <ul className={css.menu}>
                             <li><NavLink to="/" exact activeClassName={css.active}>{t('navigation.home')}</NavLink></li>
                             <li><NavLink to="/blog" activeClassName={css.active}>{t('navigation.blog')}</NavLink></li>
@@ -64,14 +83,14 @@ export class Navigation extends React.Component<{ fixed?: boolean }, { openMenu:
                                 </ul> */}
                             <li><NavLink activeClassName={css.active} to="/download">{t('navigation.download')}</NavLink></li>
                             <li>
-                                <div className={css.languageSelector}>
-                                    <a className={css.languageButton}></a>
+                                <div className={`${css.languageSelector} ${this.state.openLanguageMenu ? css.active : ""}`}>
+                                    <a className={`${css.languageButton} ${css.mobileHide}`}></a>
                                     <div className={css.dropdown}>
-                                        <SimpleBar className={css.languageList}>
+                                        <div className={css.languageList}>
                                             <Language code="cs-CZ">Čeština</Language>
                                             <Language code="en-GB">English (GB)</Language>
                                             <Language code="en-US">English (US)</Language>
-                                        </SimpleBar>
+                                        </div>
                                         <Link to="/translate" className={css.translate}><i className={`${css.icon} bx bx-globe-alt`} style={{color: '#7abf7c', fontSize: "24px"}}></i> {t('navigation.helptranslate')}</Link>
                                     </div>
                                 </div>

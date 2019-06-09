@@ -26,7 +26,7 @@ export const Developers: React.FunctionComponent = () => {
                                 <div className={css['header-info']}>
                                     <div className={css.text}>
                                         <Trans i18nKey="developers.welcome">
-                                            <h2 style={{ fontSize: "16px" }}>Welcome to the</h2>
+                                            <h2 style={{ fontSize: "16px", margin: "0" }}>Welcome to the</h2>
                                             <h1 style={{ fontSize: "40px", marginBottom: "7px", fontFamily: "'Source Code Pro', monospace" }}>Developer Portal</h1>
                                         </Trans>
                                         <p style={{ marginBottom: "20px" }}>{t('developers.subtitle')}</p>

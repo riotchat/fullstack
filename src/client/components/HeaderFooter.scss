@@ -8,6 +8,26 @@
     margin: auto 0;
     font-weight: normal;
     user-select: none;
+    .mobileHide { display: none; }
+}
+
+
+.languageButton {
+    transition: .3s;
+    background-image: url('/assets/svg/language.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    user-select: none;
+
+    @include media(mobile) {
+        &.menu-icon {
+            opacity: 0;
+            .navigation.active & {
+                opacity: 1;
+            }
+        }
+    }
 }
 
 /* -- Navbar -- */
@@ -43,6 +63,7 @@
 
     .languageSelector {
         position: relative;
+
         .dropdown {
             display: none;
             position: absolute;
@@ -54,8 +75,21 @@
             background-color: #FBFBFB;
             border-radius: 6px;
 
+            @include media(mobile) {
+                top: 70px;
+                border-radius: 0px;
+                position: fixed;
+                height: calc(100% - 70px);
+                width: 100%;
+                z-index: 10;
+            }
+
             .languageList {
                 height: 280px;
+                overflow-y: auto;
+                @include media(mobile) {
+                    height: calc(100% - 46px);
+                }
                 .language {
                     padding: 15px;
                     color: black;
@@ -64,8 +98,10 @@
                     transition: 0.3s;
                     line-height: 16px;
 
-                    &:first-child {
-                        border-radius: 6px 6px 0px 0px;
+                    @include media(desktop) {
+                        &:first-child {
+                            border-radius: 6px 6px 0px 0px;
+                        }
                     }
 
                     &.active, &:hover {
@@ -82,6 +118,7 @@
                 font-weight: 600;
                 background-color: #DFDFDF;
                 border-radius: 0px 0px 6px 6px;
+                @include media(mobile) { border-radius: 0px; }
                 cursor: pointer;
                 transition: 0.3s;
                 text-decoration: none;
@@ -93,11 +130,22 @@
             }
         }
 
-        .dropdown:hover, .languageButton:hover ~ .dropdown {
-            display: block;
-            li {
+        @include media(desktop) {
+            .dropdown:hover, .languageButton:hover ~ .dropdown {
                 display: block;
-                color: black;
+                li {
+                    display: block;
+                    color: black;
+                }
+            }
+        }
+        @include media(mobile) {
+            &.active .dropdown {
+                display: block;
+                li {
+                    display: block;
+                    color: black;
+                }
             }
         }
 
@@ -112,13 +160,6 @@
             font-weight: normal;
             text-decoration: none;
             opacity: 1;
-            transition: .3s;
-            user-select: none;
-            background-image: url('/assets/svg/language.svg');
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-            user-select: none;
 
             &:hover {
                 opacity: 0.7;
@@ -150,6 +191,9 @@
         max-height: 0;
         opacity: 0;
         transition: max-height .2s ease-out, opacity .2s ease-out;
+        @include media(mobile) {
+            pointer-events: none;
+        }
     }
 
     .menu-btn {
@@ -161,6 +205,7 @@
         &:checked ~ .menu {
             max-height: 500px;
             opacity: 1;
+            pointer-events: auto;
         }
 
         &:checked ~ .menu-icon:not(.steps) .navicon:before,
@@ -174,6 +219,11 @@
             &:after { transform: rotate(45deg); }
         }
     }
+    
+    .language-menu-btn {
+        display: none;
+        opacity: 0;
+    }
 
     .menu-icon {
         display: block;
@@ -181,6 +231,7 @@
         padding: 34px 20px;
         position: relative;
         user-select: none;
+        background-size: 80%;
 
         .navicon {
             background: white;
@@ -234,21 +285,11 @@
 
             @include media(desktop) {
                 float: left;
+                & > a { background: transparent; }
                 & > a, .languageButton {
-                    padding: 0 20px;
-                    padding: 0 20px;
-                    padding: 0 20px;
-                    padding: 0 20px;
-                    padding: 0 20px;
-                    padding: 0 20px;
-                    padding: 0 20px;
-                    padding: 0 20px;
-                    padding: 0 20px;
-                    padding: 0 20px;
                     padding: 0 20px;
                     line-height: 100px;
                     height: 100px;
-                    background: transparent;
                     /*&.active {
                         background-color: $primary-color;
                     }*/

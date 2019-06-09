@@ -427,7 +427,7 @@ section#pro {
     color: white;
     margin-left: 15px;
     padding: 15px 50px;
-    background-color: grey;
+    background: #464646;
     border: none;
     text-align: center;
     text-decoration: none;
@@ -443,14 +443,14 @@ section#pro {
     }
 }
 
-
-
 .button:hover {
-    background-color: mediumpurple;
+    color: white;
+    background: #5B5A5A;
 }
 
 .button:active {
-    background-color: $primary-color;
+    color: white;
+    background: #2D2D2D;
 }
 
 .btn-purple { /* Button */
@@ -458,7 +458,7 @@ section#pro {
     color: white;
     /*margin: 10px;*/
     padding: 15px 50px;
-    background-color: $primary-color;
+    background: $primary-color;
     border: none;
     text-align: center;
     text-decoration: none;
@@ -474,15 +474,17 @@ section#pro {
 }
 
 .btn-purple:hover {
+    color: white;
     background: #8A7BED;
 }
 
 .btn-purple:active {
+    color: white;
     background: #6859CC;
 }
 
 .buttons {
-    margin: 10px;
+    margin-top: 25px;
     user-select: none;
 }
 

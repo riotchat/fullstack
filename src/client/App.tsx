@@ -2,8 +2,6 @@ import * as React from 'react';
 import { hot } from 'react-hot-loader';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { getVersion } from '../shared/utils';
-import SimpleBar from 'simplebar-react';
-import 'simplebar/dist/simplebar.min.css'
 
 import i18next from 'i18next';
 import XHRBackend from 'i18next-xhr-backend';
