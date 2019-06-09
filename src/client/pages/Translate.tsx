@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { Helmet } from 'react-helmet';
+import { useTranslation, Trans } from 'react-i18next';
 
 import { ScrollToTopOnMount, smoothScroll } from '../utils/Utils';
 import { Content, ContentOpacityLayer } from '../components/Content';
@@ -7,7 +8,9 @@ import { Navigation, Footer } from '../components/HeaderFooter';
 
 const css = require('../sass/main.scss');
 
-export const Translate: React.FunctionComponent = () => (
+export const Translate: React.FunctionComponent = () => {
+    let { t, i18n } = useTranslation();
+    return (
     <div>
         <ScrollToTopOnMount />
         <Helmet>
@@ -20,11 +23,11 @@ export const Translate: React.FunctionComponent = () => (
                 <div className={css.header}>
                     <div className={css['header-info']}>
                         <div className={css.text}>
-                            <h1 className={css.headerTitle} style={{fontFamily: "Open Sans, sans-serif"}}>Make riot sound better<br></br>to everyone</h1>
-                            <p style={{ marginBottom: "20px" }}>Help us translate and build Riot to be accessible to everyone in the world.</p>
+                            <h1 className={css.headerTitle} style={{fontFamily: "Open Sans, sans-serif"}}>{t('translate.title')}</h1>
+                            <p style={{ marginBottom: "20px" }}>{t('translate.subtitle')}</p>
                         </div>
                         <div className={css.buttons}>
-                            <a href="#download" className={css['btn-purple']} onClick={smoothScroll}>Visit our Translation Page</a>
+                            <a href="#download" className={css['btn-purple']} onClick={smoothScroll}>{t('translate.button')}</a>
                         </div>
                     </div>
                     <div className={css['content-image']}>
@@ -64,3 +67,4 @@ export const Translate: React.FunctionComponent = () => (
         <Footer />
     </div>
 )
+}

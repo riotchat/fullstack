@@ -136,6 +136,10 @@
         float: right;
         margin: 10px 0;
     }
+
+    @include media(mobile) {
+        margin-top: 15px;
+    }
 }
 
 .dl-appstore {

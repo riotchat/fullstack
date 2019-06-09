@@ -1,0 +1,170 @@
+{
+	"appversion": "RIOT verze {{version}}",
+	"string": {
+		"new": "Novinka!",
+		"comingsoon": "Již Brzy"
+	},
+	"button": {
+		"devportal": "Přejít na Vývojářský Portál",
+		"github": "Zobrazit na GitHubu",
+		"documentation": "Zobrazit Dokumentaci",
+		"learnmore": "Zjistit více",
+		"login": "Přihlaš se",
+		"signup": "Registrovat",
+		"testSignup": "Přihlaš se do testování",
+		"presskit": "Stáhnout Press Kit"
+	},
+	"download": {
+		"downloadBeta": "Hledáš beta verze?",
+		"downloadNightly": "Stáhnout každonoční vydání",
+		"downloadStable": "Stáhnout pro {{os}}",
+		"nightly": "Každonoční",
+		"stable": "Stabilní",
+		"subtitle": "Vydej se do světa a vzbouři se.",
+		"title": "Stáhni si Riot",
+		"viewPlatforms": "Všechny platformy"
+	},
+	"homepage": {
+		"name": "Je čas se vzbouřit.",
+
+		"communities": {
+			"note": "Overwatch a logo Overwatch jsou ochranné známky společnosti Blizzard Entertainment.",
+			"text": "S Riot Komunitami se můžete připojit k serveru založenému na vaší oblíbené hře. Komunity konají své vlastní události i vlastní soutěže. Je to jako by tvůj vysněný sen byl splněn. Tak nebuď labuť a připoj se.",
+			"title": "Je tu tvá oblíbená parta."
+		},
+		"crosschat": {
+			"text": "Ještě nejsi zcela přesvědčen? Můžeš se rozhodnout chatovat se svými přáteli, a to i v případě, že používají jinou aplikaci pro chat. Připoj kanál ze svého serveru a vytvoř jakýsi most mezi tebou a tvými přáteli, i když nejste na stejné platformě.",
+			"title": "Chatujte dál přes platformy."
+		},
+		"friends": {
+			"text": "Možná asi znáš jména svých kamarádů, možná si pamatuješ i jejich přezdívky. Na Riotu stačí napsat přezdívku svého kamaráda, a tím to hasne. Už zbytečně nemusíš řešit nějaké číselné tagy.",
+			"title": "Najděte své přátele."
+		},
+		"lightweight": {
+			"text": "Riot byl postaven se starým hardwarem na mysli. Ať už hrajete na velmi výkonném počítači, který dokáže střílet lasery, nebo na starém toustovači od Tefalu, Riot běží stejným způsobem na každém počítači.",
+			"title": "Rychlý a výkonný"
+		},
+		"opensource": {
+			"text": "Je toho víc než jen kód. Tím, že máme vývoj otevřený pro veřejnost znamená to, že můžeme vytvořit transparentní vrstvu mezi námi a uživatelem. Přispějte, vytvořte si vlastního bota nebo si vytvořte vlastního klienta Riot.",
+			"title": "Open-source"
+		},
+		"pricetable": {
+			"free": {
+				"button": "Vytvořit server",
+				"month": "navždy",
+				"perk1": "192kbps kvalita zvuku",
+				"perk2": "Animované GIFy",
+				"perk3": "Other",
+				"price": "$0",
+				"free": "Zdarma"
+			},
+			"pro": {
+				"button": "Zjistit více",
+				"month": "měsíčně",
+				"perk1": "<b>256kbps</b> kvalita zvuku",
+				"perk2": "Přizpůsob si server",
+				"perk3": "Vlastní doména",
+				"perk4": "A mnohem více...",
+				"price": "$5"
+			}
+		},
+		"pro": {
+			"text": "Chcete aby váš server byl středem pozornosti? S Riot PRO získáte nejnovější a nejmodernější technologii, přímo pro vaši komunitu.",
+			"title": "Vezměte vzpouru na další úroveň."
+		},
+		"signup": {
+			"text": "Chceš nám pomoct s vývojem Riotu? Přihlaš se do našeho testovacího týmu",
+            "title": "Přihlaš se do testovacího týmu",
+            "success": "Děkujeme že jste se přihlásili do testovacího týmu Riot! Doufáme, že se brzy uvidíme."
+		},
+		"subtitle": "Perfektní hlasový a chatový systém pro hráče je tady.",
+		"title": "Pojďme se <1>vzbouřit</1>."
+	},
+	"navigation": {
+		"blog": "Blog",
+		"developers": "Pro vývojáře",
+		"download": "Stáhnout",
+		"helptranslate": "Pomožte nám překládat!",
+		"home": "Domů",
+		"features": "Funkce",
+		"branding": "Branding",
+		"devportal": "Vývojářský Portál",
+		"documentation": "Dokumentace",
+		"applications": "Aplikace",
+		"opensource": "Open-source",
+		"company": "Společnost",
+		"about": "O nás",
+		"jobs": "Práce"
+	},
+
+	"developers": {
+		"welcome": "<0>Vítejte ve</0><1>Vývojářském Portálu</1>",
+		"subtitle": "Začněte vyvíjet pro Riot, od botů co vám pomůžou se serverem po vlastní klienty.",
+		"button": "Otevřít Developer Portal",
+
+		"blog": {
+			"title": "Co je nového?",
+			"button": "Zobrazit Blog"
+		},
+		"github": {
+			"text1": "Používáme GitHub k hostování Riotu a jeho jádra.",
+			"text2": "Kontribuce kódu jsou vždy vítány. Před odesláním požadavku na problém si prosím přečtěte naše zásady pro potvrzení."
+		},
+		"documentation": {
+			"title": "Dokumentace",
+			"text1": "Přečtěte si jak Riot funguje.",
+			"text2": "Použijte naši dokumentaci k vytvoření botů pro vaši komunitu, vytvořte si vlastního klienta nebo integrujte svou hru pomocí Riot Integrace."
+		},
+		"integrations": {
+			"title": "Riot Integrace",
+			"subtitle": "Propojte vaši hru s Riotem.",
+			"text": "Přidejte herní statistiky, nebo tlačítko pro připojení do hry, přímo do Riotu."
+		}
+	},
+
+	"branding": {
+		"title": "Značka",
+		"subtitle": "Riot se zaměřuje na kreativní a zábavnou značku.",
+		"disclaimer": "Chcete-li použít některý z našich materiálů v jakémkoli tisku, kontaktujte nás předem.",
+
+		"logo": {
+			"title": "Naše logo",
+			"text1": "Použijte naše logo v jakémkoliv z vašich propagačních materiálů, jen ho neprotahujte.",
+			"text2": "Chcete zbarvit naše logo? Zde je pár doporučených barev:",
+			"recommendation": "(Doporučujeme používat světlé barvy se světlým pozadím a tónované barvy s tmavším pozadím)"
+		},
+		"fonts": {
+			"title": "Písma",
+			"subtitle": "Zde je to, co z nás dělá jedinečnými.",
+			"promo": "Používá se pouze v propagačních materiálech"
+		},
+		"colors": {
+			"title": "Barvy",
+			"subtitle": "Zde je pár barev, které nejvíce používáme.",
+			"color1": "Vzpoura",
+			"color2": "Rozteklý Nanuk",
+			"color3": "Skoro Bílá",
+			"color4": "Pravá Bílá",
+			"color5": "Nečerná"
+		},
+		"iconography": {
+			"title": "Ikonografie",
+			"subtitle": "Používáme nádherné ikonky Boxicons od uživatele Atisa. Licencován pod licencí <0>Creative Commons 4.0</0>."
+		},
+		"download": {
+			"title": "Stáhněte si náš press kit",
+			"subtitle": "Zahrnuje loga plné velikosti, propagační obrázky a další."
+		}
+	},
+
+	"translate": {
+		"title": "Zbavme se jazykových bariér.",
+		"subtitle": "Pomozte nám přeložit a postavit Riot tak, aby byl přístupný všem na světě. Bez jazykových bariér.",
+		"button": "Zobrazit stránku pro překlad"
+	},
+
+	"error": {
+		"404": "Vypadáš ztraceně.",
+		"goback": "Klikni <0>zde</0> pro návrat na hlavní stránku."
+	}
+}

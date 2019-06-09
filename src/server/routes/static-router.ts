@@ -6,6 +6,8 @@ import * as config from '../config';
 const staticRouter = Router();
 export default staticRouter;
 
+staticRouter.use('/locales', expressStatic(path.join(__dirname, '..', '..', '..', '..', 'assets', 'locales')));
+
 if (config.IS_PRODUCTION) {
   const staticsPath = path.join(__dirname, '..', '..', '..', 'statics');
 

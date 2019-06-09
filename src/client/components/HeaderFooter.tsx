@@ -1,5 +1,7 @@
 import * as React from 'react'
 import { Link, NavLink } from 'react-router-dom';
+import { useTranslation, Translation } from 'react-i18next';
+import SimpleBar from 'simplebar-react';
 
 const css = require('./HeaderFooter.scss');
 const homeCss = require('../sass/main.scss');
@@ -7,6 +9,20 @@ const homeCss = require('../sass/main.scss');
 type FooterMenuProps = {
     header: string,
     children?: React.ReactNode
+}
+
+const Language: React.FunctionComponent<{code: string}> = (props) => {
+    let { i18n } = useTranslation();
+    let countryCode = props.code.split(/-|_/)[1].toLowerCase();
+    return (
+        <div onClick={(e) => {
+            i18n.loadLanguages(props.code).then(() => {
+                i18n.changeLanguage(props.code);
+            });
+        }} className={`${css.language} ${i18n.language === props.code ? css.active : ""}`}>
+            <img src={`https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.3.0/flags/4x3/${countryCode}.svg`} height="16px" style={{marginRight: "10px", borderRadius: "2px"}}/>{props.children}
+        </div>
+    )
 }
 
 export class Navigation extends React.Component<{ fixed?: boolean }, { openMenu: boolean }> {
@@ -26,25 +42,45 @@ export class Navigation extends React.Component<{ fixed?: boolean }, { openMenu:
     }
 
     render() {
-        return <nav className={`${css.navigation} ${this.props.fixed ? css.fixed : ""} ${this.state.openMenu ? css.active : ""}`}>
-            <div className={`${css.bkg} ${this.state.openMenu ? css.active : ""}`} />
-            <Link to="/" className={css.logo}>RIOT</Link>
-            <input className={css['menu-btn']} type="checkbox" id="menu-btn" onChange={this.onChange} />
-            <label className={css['menu-icon']} htmlFor="menu-btn">
-                <span className={css.navicon}></span>
-            </label>
-            <ul className={css.menu}>
-                <li><NavLink to="/" exact activeClassName={css.active}>Home</NavLink></li>
-                <li><NavLink to="/blog" activeClassName={css.active}>Blog</NavLink></li>
-                <li><NavLink to="/developers" activeClassName={css.active}>Developers</NavLink></li>
-                {/* <ul>
-                        <li><a href="x">Get Started</a></li>
-                        <li><a href="x">Developer Portal</a></li>
-                        <li><a href="x">Open Source</a></li>
-                    </ul> */}
-                <li><NavLink activeClassName={css.active} to="/download">Download</NavLink></li>
-            </ul>
-        </nav>
+        //let { t, i18n } = useTranslation();
+        return (
+            <Translation>
+                { (t, { i18n }) =>
+                    <nav className={`${css.navigation} ${this.props.fixed ? css.fixed : ""} ${this.state.openMenu ? css.active : ""}`}>
+                        <div className={`${css.bkg} ${this.state.openMenu ? css.active : ""}`} />
+                        <Link to="/" className={css.logo}>RIOT</Link>
+                        <input className={css['menu-btn']} type="checkbox" id="menu-btn" onChange={this.onChange} />
+                        <label className={css['menu-icon']} htmlFor="menu-btn">
+                            <span className={css.navicon}></span>
+                        </label>
+                        <ul className={css.menu}>
+                            <li><NavLink to="/" exact activeClassName={css.active}>{t('navigation.home')}</NavLink></li>
+                            <li><NavLink to="/blog" activeClassName={css.active}>{t('navigation.blog')}</NavLink></li>
+                            <li><NavLink to="/developers" activeClassName={css.active}>{t('navigation.developers')}</NavLink></li>
+                            {/* <ul>
+                                    <li><a href="x">Get Started</a></li>
+                                    <li><a href="x">Developer Portal</a></li>
+                                    <li><a href="x">Open Source</a></li>
+                                </ul> */}
+                            <li><NavLink activeClassName={css.active} to="/download">{t('navigation.download')}</NavLink></li>
+                            <li>
+                                <div className={css.languageSelector}>
+                                    <a className={css.languageButton}></a>
+                                    <div className={css.dropdown}>
+                                        <SimpleBar className={css.languageList}>
+                                            <Language code="cs-CZ">Čeština</Language>
+                                            <Language code="en-GB">English (GB)</Language>
+                                            <Language code="en-US">English (US)</Language>
+                                        </SimpleBar>
+                                        <Link to="/translate" className={css.translate}><i className={`${css.icon} bx bx-globe-alt`} style={{color: '#7abf7c', fontSize: "24px"}}></i> {t('navigation.helptranslate')}</Link>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+                }
+            </Translation>
+        )
     }
 }
 
@@ -59,6 +95,8 @@ export const FooterMenu: React.FunctionComponent<FooterMenuProps> = (props) => (
 );
 
 export const Footer: React.FunctionComponent = (props) => {
+    let { t, i18n } = useTranslation();
+
     let year = "2019";
     if(new Date().getFullYear().toString() !== year) year = `${year} - ${new Date().getFullYear()}`;
     return <footer>
@@ -73,21 +111,21 @@ export const Footer: React.FunctionComponent = (props) => {
                 <a href="https://instagram.com/riotchat" target="_blank"><img src="/assets/images/social/instagram.svg" title="Instagram" height="25px" /></a>
             </div>
             <FooterMenu header="Riot">
-                <Link to="/download">Download</Link>
-                <Link to="/#lightweight">Features</Link>
-                <Link to="/branding">Branding</Link>
-                <Link to="/pro">Riot Pro<span className={homeCss.new}>New!</span></Link>
+                <Link to="/download">{t('navigation.download')}</Link>
+                <Link to="/#lightweight">{t('navigation.features')}</Link>
+                <Link to="/branding">{t('navigation.branding')}</Link>
+                <Link to="/pro">Riot Pro<span className={homeCss.new}>{t('string.new')}</span></Link>
             </FooterMenu>
-            <FooterMenu header="Developers">
-                <Link to="/developers">Developer Portal</Link>
-                <Link to="/developers/documentation">Documentation</Link>
-                <Link to="/developers/applications">Applications</Link>
-                <a href="/#open-source">Open-source</a>
+            <FooterMenu header={t('navigation.developers')}>
+                <Link to="/developers">{t('navigation.devportal')}</Link>
+                <Link to="/developers/documentation">{t('navigation.documentation')}</Link>
+                <Link to="/developers/applications">{t('navigation.applications')}</Link>
+                <a href="/#open-source">{t('navigation.opensource')}</a>
             </FooterMenu>
-            <FooterMenu header="Company">
-                <Link to="/about">About</Link>
-                <Link to="/blog">Blog</Link>
-                <Link to="/jobs">Jobs</Link>
+            <FooterMenu header={t('navigation.company')}>
+                <Link to="/about">{t('navigation.about')}</Link>
+                <Link to="/blog">{t('navigation.blog')}</Link>
+                <Link to="/jobs">{t('navigation.jobs')}</Link>
             </FooterMenu>
         </div>
     </footer>
