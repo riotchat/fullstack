@@ -46,6 +46,15 @@ class AppImpl extends React.Component<{}, {localsLoaded}> {
             Info(t(`common:appversion`, {
                 version: getVersion()
             }));
+			
+			let strings = [], colours = ['red', 'blue', 'green', 'magenta', 'yellow'];
+			for (let i=0;i<5;i++)
+				strings.push(`color: ${colours[i]}; font-size: 16em; line-height: 1em; text-shadow: 2px 2px 0px white; font-family: Comic Sans MS`);
+			
+			console.log('%cS%cT%cO%cP%c!', ...strings);
+			console.log('%cHey! Got your attention? Good.', 'color: gray; font-size: 2em; line-height: 1em');
+			console.log('%cDon\'t copy and paste anything here, chances are it won\'t do any good.', 'color: red; font-size: 3em; line-height: 1em');
+			console.log('%cA RIOT employee would never ask you to paste anything here.', 'color: gray; font-size: 1.5em; line-height: 1em');
         });
     }
 
