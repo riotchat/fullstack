@@ -19,7 +19,7 @@ import { Pro } from './pages/Pro';
 import { Translate } from './pages/Translate';
 import { SwitchToRiot } from './pages/SwitchToRiot';
 import { Guidelines } from './pages/Guidelines';
-import { About } from './pages/About';
+//import { About } from './pages/About';
 
 let localsLoaded = false;
 class AppImpl extends React.Component<{}, {localsLoaded}> {
@@ -56,8 +56,9 @@ class AppImpl extends React.Component<{}, {localsLoaded}> {
 			
 			console.log('%cS%cT%cO%cP%c!', ...strings);
 			console.log('%cHey! Got your attention? Good.', 'color: gray; font-size: 2em; line-height: 1em');
-			console.log('%cDon\'t copy and paste anything here, chances are it won\'t do any good.', 'color: red; font-size: 3em; line-height: 1em');
-			console.log('%cA RIOT employee would never ask you to paste anything here.', 'color: gray; font-size: 1.5em; line-height: 1em');
+			console.log('%cDon\'t copy and paste anything here, especially if someone else told you to do so, chances are it won\'t do any good and it will probably give an attacker access to your account.', 'color: red; font-size: 3em; line-height: 1em');
+            console.log('%cA RIOT employee would never ask you to paste anything here.', 'color: gray; font-size: 1.5em; line-height: 1em');
+            console.log('%cIf you do know what the code you\'re about to paste in does though, you should either consider contributing to https://github.com/riotchat or come work with us at https://riotchat.gq/jobs.', 'color: gray; font-size: 1.5em; line-height: 1em');
         });
     }
 
@@ -72,7 +73,7 @@ class AppImpl extends React.Component<{}, {localsLoaded}> {
                 <Route path='/translate' component={Translate} />
                 <Route path='/switch' component={SwitchToRiot} />
                 <Route path='/guidelines' component={Guidelines} />
-                <Route path='/about' component={About} />
+                {/* <Route path='/about' component={About} /> */}
                 <Route component={Error404} status={404} />
             </Switch>
         );
