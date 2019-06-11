@@ -1,7 +1,9 @@
-import LoggerInternal from 'log74';
+import LoggerInternal, { LogLevel } from 'log74';
 import { resolve } from 'path';
 import { exists, mkdir, WriteStream, createWriteStream } from 'fs';
 import { promisify } from 'util';
+
+import * as config from '../config';
 
 const OUTPUT = resolve('logs');
 
@@ -22,15 +24,15 @@ async function createHandle() {
   }
 }
 
-async function Handle(string: string) {
+function Handle(string: string) {
   if (writeStream) {
-    writeStream.write('[' + new Date().toUTCString() + '] ' + string + '\n');
+    writeStream.write(string + '\n');
   } else {
     buffer.push(string);
   }
 }
 
-const Logger = new LoggerInternal(Handle);
+const Logger = new LoggerInternal(config.LOG_LEVEL, Handle);
 export default Logger;
 
 createHandle();
