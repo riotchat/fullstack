@@ -5432,10 +5432,10 @@ lodash.uniq@^4.5.0:
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
   integrity sha512-cQKh8igo5QUhZ7lg38DYWAxMvjSAKG0A8wGSVimP07SIUEK2UO+arSRKbRZWtelMtN5V0Hkwh5ryOto/SshYIg==
 
-log74@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/log74/-/log74-1.0.3.tgz#ce85da981daeb7b5cad70787cc7d974bc07d2afc"
-  integrity sha512-HsNQZi7Xl0Qyt+yVnvWYQJHCTwChDOokU7gjhz+0P6kZSpDZxnJAqoj+9AWw2hNzoh2TW7z4G+9ykOE8COgfRw==
+log74@1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/log74/-/log74-1.0.5.tgz#31026d38dfa62a1ae8b3ad73ce99e1be4fca0b91"
+  integrity sha512-3zoz4GPGdt+HR1+hm8zzkIR4zGP1MiNaAQQcLLVN1Xa/mHrw4p98i8IjytMajrF0Qstv6IS60vzED3eCJm1nag==
   dependencies:
     chalk "^2.4.2"
 
