@@ -1,8 +1,13 @@
 {
 	"appversion": "RIOT version {{version}}",
 	"string": {
+		"welcome": "Welcome to Riot!",
 		"new": "New!",
-		"comingsoon": "Coming Soon"
+		"comingsoon": "Coming Soon",
+
+		"username": "Username",
+		"email": "E-mail Address",
+		"password": "Password"
 	},
 	"button": {
 		"devportal": "Log into the Developer Portal",
@@ -166,5 +171,38 @@
 	"error": {
 		"404": "You seem lost.",
 		"goback": "Click <0>here</0> to go back to the main page."
+	},
+
+	"switch": {
+		"title": "Switch to Riot",
+		"subtitle": "Connect your Discord account and we'll take care of the rest.",
+		"button": "Get started",
+
+		"step1": {
+			"title": "Connect your Discord account",
+			"text": "Quickly sync your friends and profile to make creating an account less of a hassle. This will let you skip having to find that profile picture you've stuck with for so long and will allow you to seamlessly move from Discord along with your friends.",
+			"button": "Login with Discord"
+		},
+
+		"step2": {
+			"title": "Fill out the rest",
+			"text": "That's it. We just need to double check your email and let you select your new password. You also have the option to customise your profile as you wish if you're not happy with it."
+		},
+
+		"completion": {
+			"title": "Almost there!",
+			"subtitle": "We just need a bit more information from you, go ahead and complete your profile below."
+		}
+
+	},
+
+	"guidelines": {
+		"title": "Community Guidelines",
+		"lastupdated": "Last updated on",
+
+		"rules": {
+			"acceptable": "Acceptable Usage",
+			"p1": "Riot can cater to your community, guild, game server or your top-secret gamer group. We encourage you to:"
+		}
 	}
 }

@@ -1,8 +1,13 @@
 {
 	"appversion": "RIOT verze {{version}}",
 	"string": {
+		"welcome": "Vítejte na Riotu!",
 		"new": "Novinka!",
-		"comingsoon": "Již Brzy"
+		"comingsoon": "Již Brzy",
+
+		"username": "Přezdívka",
+		"email": "E-mailová adresa",
+		"password": "Heslo"
 	},
 	"button": {
 		"devportal": "Přejít na Vývojářský Portál",
@@ -126,7 +131,6 @@
 		"title": "Značka",
 		"subtitle": "Riot se zaměřuje na kreativní a zábavnou značku.",
 		"disclaimer": "Chcete-li použít některý z našich materiálů v jakémkoli tisku, kontaktujte nás předem.",
-
 		"logo": {
 			"title": "Naše logo",
 			"text1": "Použijte naše logo v jakémkoliv z vašich propagačních materiálů, jen ho neprotahujte.",
@@ -166,5 +170,35 @@
 	"error": {
 		"404": "Vypadáš ztraceně.",
 		"goback": "Klikni <0>zde</0> pro návrat na hlavní stránku."
+	},
+
+	"switch": {
+		"title": "Přesuňte se na Riot",
+		"subtitle": "Připojte svůj Discord účet a my se postaráme o zbytek.",
+		"button": "Začít",
+		"step1": {
+			"title": "Připojte svůj Discord účet",
+			"text": "Synchronizujte své přátele a profil, abyste si mohli vytvořit nový profil bez potíží. Taky se vám spolu synchronizuje profilový obrázek, který jste měli tak dlouho, že už si nevzpomenete, a umožní vám hladce přejít od Discordu spolu se svými přáteli.",
+			"button": "Přihlásit se přes Discord"
+		},
+		"step2": {
+			"title": "Doplňte zbytek",
+			"text": "A je to. Stačí si jen zkontrolovat váš e-mail a nechat si vybrat nové heslo. Máte také možnost si přizpůsobit svůj profil, jak si přejete, pokud nejste s ním spokojeni."
+		},
+		"completion": {
+			"title": "Skoro hotovo!",
+			"subtitle": "Potřebujeme jen trochu více informací od vás, pokračujte a dokončete svůj profil níže."
+		}
+
+	},
+
+	"guidelines": {
+		"name": "Zásady komunity",
+		"title": "Zásady komunity",
+		"lastupdated": "Posledně aktualizováno dne",
+		"rules": {
+			"acceptable": "Co je přijatelné",
+			"p1": "Riot can cater to your community, guild, game server or your top-secret gamer group. We encourage you to:"
+		}
 	}
 }
