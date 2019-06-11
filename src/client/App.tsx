@@ -13,10 +13,13 @@ import { Error404 } from './pages/errors/404';
 // Pages
 import { Home } from './pages/Home';
 import { Branding } from './pages/Branding';
-import { Developers } from './pages/Developers';
+import { Developers } from './pages/developers/Developers';
 import { Download } from './pages/Download';
 import { Pro } from './pages/Pro';
 import { Translate } from './pages/Translate';
+import { SwitchToRiot } from './pages/SwitchToRiot';
+import { Guidelines } from './pages/Guidelines';
+import { About } from './pages/About';
 
 let localsLoaded = false;
 class AppImpl extends React.Component<{}, {localsLoaded}> {
@@ -67,7 +70,10 @@ class AppImpl extends React.Component<{}, {localsLoaded}> {
                 <Route path='/download' component={Download} />
                 <Route path='/pro' component={Pro} />
                 <Route path='/translate' component={Translate} />
-                <Route component={Error404} />
+                <Route path='/switch' component={SwitchToRiot} />
+                <Route path='/guidelines' component={Guidelines} />
+                <Route path='/about' component={About} />
+                <Route component={Error404} status={404} />
             </Switch>
         );
         else return null;

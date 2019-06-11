@@ -3,14 +3,14 @@ import { Helmet } from 'react-helmet';
 import { Route, Link } from 'react-router-dom';
 import { useTranslation, Trans } from 'react-i18next';
 
-import { ScrollToTopOnMount, smoothScroll } from '../utils/Utils';
-import { Content, ContentOpacityLayer } from '../components/Content';
-import { Navigation, Footer } from '../components/HeaderFooter';
+import { ScrollToTopOnMount, smoothScroll } from '../../utils/Utils';
+import { Content, ContentOpacityLayer } from '../../components/Content';
+import { Navigation, Footer } from '../../components/HeaderFooter';
 
-import { DeveloperDocs } from './developers/Docs';
+import { DeveloperDocs } from './Docs';
 
-const css = require('../sass/main.scss');
-const brandingCss = require('./Branding.scss');
+const css = require('../../sass/main.scss');
+const brandingCss = require('../Branding.scss');
 
 export const Developers: React.FunctionComponent = () => {
     let { t, i18n } = useTranslation();

@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet';
 import { useTranslation, Trans } from 'react-i18next';
 
 import { ScrollToTopOnMount, smoothScroll } from '../utils/Utils';
-import { Content, ContentOpacityLayer } from '../components/Content';
+import { Content } from '../components/Content';
 import { Navigation, Footer } from '../components/HeaderFooter';
 
 const css = require('../sass/main.scss');
@@ -11,14 +11,14 @@ const css = require('../sass/main.scss');
 export const Translate: React.FunctionComponent = () => {
     let { t, i18n } = useTranslation();
     return (
-    <div>
+    <div style={{background: 'linear-gradient(120deg, #A1C652, #96e6a1)'}}>
         <ScrollToTopOnMount />
         <Helmet>
             <title>Riot | Translate Riot</title>
         </Helmet>
         <main>
             {/*<header style={{background: '#A1C652'}}>*/}
-            <header style={{background: 'linear-gradient(120deg, #A1C652, #96e6a1)'}}>
+            <header style={{background: 'transparent'}}>
                 <Navigation fixed={true} />
                 <div className={css.header}>
                     <div className={css['header-info']}>
@@ -35,8 +35,8 @@ export const Translate: React.FunctionComponent = () => {
                     </div>
                 </div>
             </header>
-            <section id="friends" style={{backgroundImage: "url('/assets/images/friends.png')"}}>
-                <ContentOpacityLayer>
+            <section id="friends">
+                <Content>
                     <div className={css.hook}>
                         <img
                             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAACHElEQVRoQ+1XzVXCQBCeATx4ILaAFagdUIJWoFYAnmWRl80dqECsQO3ADsQKoAXiwYPA+ILCQ0jYmfwQ89xcM3/f983s7CIU/MOC1w8WQN4KWgWsAgkZsC2UkMDE7v9PgU7no1aaTRtI8zogni4oJBoSll7m5Uq/0zkcJ6ZVEECkgKv8KwS43xWfAK7b2hkIakhkygbAKX5ZyT5BsAAEbVOefY4kVM3KB8f7aCcWAN167wFSQwIACPvKqzY3fbTySRRnw1hp51fNTACT19XAcrMTDZV3dPY3AMRkbZOtAEw+ChQdgKv8IQKccLtnsRoA3tra+d4TGX7MGUhviNPGwgJQ+GM0YK3Qi2wpOwcEdwvHPY1i7YH1vl2003TaJKT6crCDgUXCl1ml0uNu39wApDWEFsAPk6xTKLD1bv3LeQnqSHQaea1YvAtwSAhPd67znJZau+IYAeiWf05IXQSsSQoioDES3ijPeZL4SW13AnDVexeBtm6UkiQE2Gvr6o3ER2IbCSDWFToqc8TVWlJolG0ogKBtAOExjQSrGAQXYe0kPY1Ye8BVk5G0501gg5lo66PjpO8DIwDOtjUVG/k/RIXUFdAtfwAIl7GL3OVI8KA852rdJAMAMZ6PXLQRz0yue5jd1hBLGZEmD3tmSmOs21sAUvYyV0BaUN72xrtQ3gWa8lsAJoay/m8VyJphU3yrgImhrP9bBbJm2BT/C3BQ6zFjsmUdAAAAAElFTkSuQmCC" />
@@ -45,10 +45,10 @@ export const Translate: React.FunctionComponent = () => {
                             just need to type in your friends name, and you're good to go, so you don't have to deal
                             with some random number tags.</p>
                     </div>
-                </ContentOpacityLayer>
+                </Content>
             </section>
-            <section id="communities" style={{backgroundImage: "url('/assets/images/communities.jpg')"}}>
-                <ContentOpacityLayer>
+            <section id="contribute">
+                <Content>
                     <div className={css['content-image']}>
                         <img className={css.image} src="/assets/images/invites.png" />
                     </div>
@@ -61,7 +61,7 @@ export const Translate: React.FunctionComponent = () => {
                             square.</p>
                         <span className={css.disclaimer}>Overwatch and the Overwatch logo are trademarks of Blizzard Entertainment.</span>
                     </div>
-                </ContentOpacityLayer>
+                </Content>
             </section>
         </main>
         <Footer />

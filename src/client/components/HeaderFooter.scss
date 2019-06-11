@@ -299,7 +299,7 @@
     }
 
     @include media(mobile) {
-        &.fixed {
+        &.fixed, &.active {
             /*position: sticky;
             position: -webkit-sticky;*/
             position: fixed;

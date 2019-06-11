@@ -55,7 +55,7 @@ class TestingSignUpForm extends React.Component<{url: string, emailName: string,
 
     render() {
         if(this.state.submission !== 2) {
-            return <form onSubmit={this.onSubmit}>
+            return <form className={css.testingSignUpForm} onSubmit={this.onSubmit}>
                 <input type="email" disabled={this.state.submission !== 0} required placeholder="yourmail@mail.com" onChange={
                     (e) => this.setState({email: e.target.value, submission: this.state.submission})
                 } />
