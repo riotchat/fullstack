@@ -9,7 +9,9 @@
     "rootDir": "..",
     "lib": ["es6"],
     "moduleResolution": "node",
-    "types": ["node"]
+	"types": ["node"],
+	"experimentalDecorators": true,
+	"emitDecoratorMetadata": true
   },
   "files": ["./main.ts"]
 }

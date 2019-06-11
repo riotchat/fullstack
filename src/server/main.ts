@@ -21,6 +21,8 @@ app.use(apiRouter);
 app.use(staticRouter);
 app.use(pagesRouter);
 
+import './database';
+
 app.listen(config.SERVER_PORT, () => {
   Logger.info(`RIOT listening on :${config.SERVER_PORT}`);
 });
