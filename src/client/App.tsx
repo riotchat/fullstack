@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { hot } from 'react-hot-loader';
+import { Info } from 'log74/dist/index.web';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { getVersion } from '../shared/utils';
 
@@ -42,7 +43,7 @@ class AppImpl extends React.Component<{}, {localsLoaded}> {
                 localsLoaded: true
             });
 
-            console.log(t(`common:appversion`, {
+            Info(t(`common:appversion`, {
                 version: getVersion()
             }));
         });
