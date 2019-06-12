@@ -103,6 +103,10 @@ export class Navigation extends React.Component<{ fixed?: boolean }, { openMenu:
     }
 }
 
+export const Overlay: React.FunctionComponent<FooterMenuProps> = (props) => (
+    <div className={css.opacity} />
+);
+
 export const FooterMenu: React.FunctionComponent<FooterMenuProps> = (props) => (
     <div className={css['footer-menu']}>
         <h5>{props.header}</h5>
@@ -122,7 +126,7 @@ export const Footer: React.FunctionComponent = (props) => {
         <div id="footer" className={css.wrapper}>
             <div className={css.logoWrapper}>
                 <h1 className={css.logo}>RIOT</h1>
-                <span className={css.copyright}>&copy;{year} Riot Communications</span>
+                {/*<span className={css.copyright}>&copy;{year} Riot Communications</span>*/}
             </div>
             <div className={css.social}>
                 <a href="https://facebook.com" target="_blank"><img src="/assets/images/social/facebook.svg" title="Facebook" height="25px" /></a>
@@ -134,6 +138,12 @@ export const Footer: React.FunctionComponent = (props) => {
                 <Link to="/#lightweight">{t('navigation.features')}</Link>
                 <Link to="/branding">{t('navigation.branding')}</Link>
                 <Link to="/pro">Riot Pro<span className={homeCss.new}>{t('string.new')}</span></Link>
+            </FooterMenu>
+            <FooterMenu header={t('navigation.developers')}>
+                <Link to="/developers">{t('navigation.devportal')}</Link>
+                <Link to="/developers/documentation">{t('navigation.documentation')}</Link>
+                <Link to="/developers/applications">{t('navigation.applications')}</Link>
+                <a href="/#open-source">{t('navigation.opensource')}</a>
             </FooterMenu>
             <FooterMenu header={t('navigation.developers')}>
                 <Link to="/developers">{t('navigation.devportal')}</Link>

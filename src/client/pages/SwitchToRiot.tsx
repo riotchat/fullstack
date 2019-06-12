@@ -42,7 +42,7 @@ export const SwitchToRiot: React.FunctionComponent<RouteComponentProps> = (props
                         <div className={`${formCss.input} ${formCss.email}`} style={{ marginTop: '30px' }}>
                             <input className={formCss.inputField} type="email" name="email" autoComplete="email" placeholder={t('string.email')} required />
                         </div>
-                        <div className={`${formCss.input} ${formCss.pass}`} style={{ marginBottom: '30px' }}>
+                        <div className={`${formCss.input} ${formCss.pass}`}>
                             <input className={formCss.inputField} type="password" name="password" autoComplete="current-password" placeholder={t('string.password')} required />
                         </div>
                         <div className={formCss.tos}>

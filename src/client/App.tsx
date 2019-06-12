@@ -19,7 +19,7 @@ import { Pro } from './pages/Pro';
 import { Translate } from './pages/Translate';
 import { SwitchToRiot } from './pages/SwitchToRiot';
 import { Guidelines } from './pages/Guidelines';
-//import { About } from './pages/About';
+import { About } from './pages/About';
 
 let localsLoaded = false;
 class AppImpl extends React.Component<{}, {localsLoaded}> {
@@ -73,7 +73,7 @@ class AppImpl extends React.Component<{}, {localsLoaded}> {
                 <Route path='/translate' component={Translate} />
                 <Route path='/switch' component={SwitchToRiot} />
                 <Route path='/guidelines' component={Guidelines} />
-                {/* <Route path='/about' component={About} /> */}
+                <Route path='/about' component={About} />
                 <Route component={Error404} status={404} />
             </Switch>
         );
