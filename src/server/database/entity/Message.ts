@@ -1,9 +1,8 @@
-import { Entity, Column, PrimaryGeneratedColumn, TableInheritance, ManyToOne } from 'typeorm';
-import Channel from './Channel';
+import { Entity, Column, PrimaryGeneratedColumn, ManyToOne } from 'typeorm';
+import { Channel } from './Channel';
 
 @Entity()
-@TableInheritance({ column: { type: "varchar", name: "type" } })
-export default class Message {  
+export class Message {  
 	@PrimaryGeneratedColumn()
 	id: number;
 
@@ -13,5 +12,5 @@ export default class Message {
 	content: string;
 	
 	@ManyToOne(type => Channel, channel => channel.messages)
-    channel: Channel;
+	channel: Channel;
 }

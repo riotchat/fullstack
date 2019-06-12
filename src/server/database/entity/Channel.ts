@@ -1,9 +1,9 @@
 import { Entity, PrimaryGeneratedColumn, TableInheritance, OneToMany } from 'typeorm';
-import Message from './Message';
+import { Message } from './Message';
 
 @Entity()
 @TableInheritance({ column: { type: "varchar", name: "type" } })
-export default class Channel {  
+export class Channel {
 	@PrimaryGeneratedColumn()
 	id: number;
 
