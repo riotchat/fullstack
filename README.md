@@ -1,5 +1,5 @@
 <p align="center">
-  <img height="125px" src="assets/images/logo.png">
+  <img height="125px" src="https://raw.githubusercontent.com/riotchat/assets/master/images/logo.png">
 </p>
 
 # Riot
