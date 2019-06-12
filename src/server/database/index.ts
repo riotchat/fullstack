@@ -2,9 +2,9 @@ import "reflect-metadata";
 import { createConnection } from 'typeorm';
 import Logger from '../system/logging';
 
-import User from './entity/User';
-import Channel from './entity/Channel';
-import Message from './entity/Message';
+import * as Entities from './entity/imports';
+const entities = [];
+for (let key in Entities) entities.push(Entities[key]);
 
 createConnection({
 	type: 'mysql',
@@ -13,14 +13,10 @@ createConnection({
 	username: 'riot',
 	password: 'riot',
 	database: 'riot',
-	entities: [
-		User,
-		Channel,
-		Message
-	],
+	entities,
 	synchronize: true,
 	logging: false
-}).then(connection => {
+}).then(async connection => {
 	Logger.success('Connected to database!');
 }).catch(error => {
 	Logger.error(`Could not connect to database! ${error}`);
