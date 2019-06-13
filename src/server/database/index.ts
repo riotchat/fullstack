@@ -8,8 +8,9 @@ for (let key in Entities) entities.push(Entities[key]);
 
 createConnection({
 	type: 'mysql',
-	host: '192.168.0.26',
-	port: 3306,
+	/** you will only connect if you have been authorised */
+	host: 'insrt.uk', //'192.168.0.26',
+	port: 33306, //3306,
 	username: 'riot',
 	password: 'riot',
 	database: 'riot',
