@@ -84,7 +84,7 @@ class DownloadButtons extends React.Component<{t, i18n}, {
                 <br /><br />
                 
                 { this.state.allPlatforms && (
-                    <div style={{ margin: "10px" }}>
+                    <div>
                     <div className={downloadCss.allPlatforms}>
                         <div className={downloadCss['dl-div']}>
                             <img className={downloadCss['os-icon']} src="assets/svg/windows.svg" height="48px" />
@@ -173,7 +173,9 @@ export const Download: React.FunctionComponent = () => {
                         <div className={css['content-download']}>
                             <h1 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '42px' }}>{t('download.title')}</h1>
                             <p style={{ marginBottom: '40px' }} >{t('download.subtitle')}</p>
-                            <DownloadButtons t={t} i18n={i18n} />
+                            <div style={{ margin: "10px" }}>
+                                <DownloadButtons t={t} i18n={i18n} />
+                            </div>
                         </div>
                     </section>
                     <section style={{ textAlign: 'center', backgroundImage: "url('/assets/images/pattern/pattern.png')", backgroundSize: "unset", backgroundPosition: "unset" }}>

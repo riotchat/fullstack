@@ -36,14 +36,14 @@ h5 { /* Footer Menu Title */
     user-select: none;
 }
 
-a { /* Links */
+/*a {
     color: white;
     transition: .5s;
 
     &:hover {
         color: darkgrey;
     }
-}
+}*/
 
 form {
     display: flex;
@@ -170,6 +170,7 @@ br {
     font-family: "Pro", sans-serif;
     font-style: italic;
     font-size: 24px;
+    font-weight: 700;
 }
 
 .step {
@@ -210,12 +211,8 @@ header {
 }
 
 .header {
-    /*height: 800px;*/
     display: flex;
     margin: 0 auto;
-    /*justify-content: center;
-    align-self: center;*/
-    padding: 20px;
     max-width: 1400px;
     position: relative;
     height: 100%;
@@ -236,9 +233,11 @@ header {
     transform: translate(0%, -50%);
     /*margin: 100px auto;*/
     user-select: none;
+    max-width: 50%;
 
     @include media(mobile) {
-        margin: 10px;
+        margin: 20px;
+        max-width: 100%;
     }
 }
 
@@ -289,8 +288,12 @@ section:last-child { /* Shadow on last section */
 
 .content-image {
     margin: auto;
-    text-align: center;
-    border-radius: 20px;
+    /*text-align: center;*/
+}
+
+.content-side {
+    margin: auto;
+    padding: 0 100px;
 }
 
 .content-download {
@@ -757,7 +760,65 @@ select:focus {
     padding: 20px;
     display: inline-flex;
     list-style: none;
+    transition: .3s;
+
+    a:hover {
+        opacity: .7;
+    }
 }
+
+/* ---------------------- Server Card ---------------------- */
+.server-card {
+    background: #333234;
+    text-align: left;
+    padding: 15px;
+    width: 350px;
+    border-radius: 6px;
+
+    .server-icon {
+        display: inline-flex;
+        margin-right: 20px;
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
+        position: relative;
+        cursor: pointer;
+    
+        img {
+            height: 100%;
+        }
+    }
+
+
+
+    .server-status-span {
+        padding: 4px 10px;
+        display: inline;
+        background: grey;
+        font-size: 12px;
+        border-radius: 60px;
+    }
+}
+
+.dot-online {
+    height: 8px;
+    width: 8px;
+    background-color: #14B89C;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .dot-members {
+    height: 8px;
+    width: 8px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
 /* ---------------------- Footer ---------------------- */
 
 @media only screen and (max-width: 1024px) {

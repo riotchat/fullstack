@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { RouteComponentProps } from 'react-router';
 
@@ -90,6 +91,9 @@ export const About: React.FunctionComponent<RouteComponentProps> = (props) => {
     return (
         <div>
             <ScrollToTopOnMount />
+            <Helmet>
+                <title>Riot | {t('about.name')}</title>
+            </Helmet>
             <main>
                 <header style={{ backgroundImage: "url('/assets/images/about-us.png')", height: "100vh" }}>
                     <Navigation fixed={true} />

@@ -86,6 +86,7 @@ export class Navigation extends React.Component<{ fixed?: boolean }, { openMenu:
                                 <div className={`${css.languageSelector} ${this.state.openLanguageMenu ? css.active : ""}`}>
                                     <a className={`${css.languageButton} ${css.mobileHide}`}></a>
                                     <div className={css.dropdown}>
+                                        <div className={css.dropdownArrow} />
                                         <div className={css.languageList}>
                                             <Language code="cs-CZ">Čeština</Language>
                                             <Language code="en-GB">English (GB)</Language>
@@ -139,11 +140,10 @@ export const Footer: React.FunctionComponent = (props) => {
                 <Link to="/branding">{t('navigation.branding')}</Link>
                 <Link to="/pro">Riot Pro<span className={homeCss.new}>{t('string.new')}</span></Link>
             </FooterMenu>
-            <FooterMenu header={t('navigation.developers')}>
-                <Link to="/developers">{t('navigation.devportal')}</Link>
-                <Link to="/developers/documentation">{t('navigation.documentation')}</Link>
-                <Link to="/developers/applications">{t('navigation.applications')}</Link>
-                <a href="/#open-source">{t('navigation.opensource')}</a>
+            <FooterMenu header={t('navigation.resources')}>
+                <Link to="/guidelines">{t('navigation.guidelines')}</Link>
+                <Link to="/tos">{t('navigation.terms')}</Link>
+                <Link to="/support">{t('navigation.support')}</Link>
             </FooterMenu>
             <FooterMenu header={t('navigation.developers')}>
                 <Link to="/developers">{t('navigation.devportal')}</Link>

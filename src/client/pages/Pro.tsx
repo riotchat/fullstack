@@ -11,7 +11,7 @@ export const Pro: React.FunctionComponent = () => (
     <div>
         <ScrollToTopOnMount />
         <Helmet>
-            <title>Riot | Pro</title>
+            <title>Riot | PRO</title>
         </Helmet>
         <main>
             <header style={{background: 'linear-gradient(#9987F5, #EA86F3)'}}>
@@ -25,14 +25,17 @@ export const Pro: React.FunctionComponent = () => (
                         </div>
                         <div className={css.buttons}>
                             <a href="#download" className={css['btn-purple']} onClick={smoothScroll}>Buy Now</a>
+                            <div>
+                                <a href="#download" className={css['btn-purple']} onClick={smoothScroll}>Buy Now</a>
+                                <div style={{textAlign: "center"}}>Get 2 months free!</div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </header>
-            <section id="features" style={{background: '#EA86F3'}}>
+            <section id="features">
                 <ContentOpacityLayer>
                     <div className={css.hook}>
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAADHUlEQVRoQ+2ZUXbSUBCGZ1KPhCfbFUh30K5AugK7A3EFtm/BnmAkR8mbdQXiCtQVFFcgXQG4gtInwGPzexKkUEhyZ9oktOeU10zunW/+5J/JhemB//iB50+PAJtWsDAFxm2nwcSfIkAQjqutoFsEbCEA8LztqTUdENN2nDRoVAkru+x5o7whCgGIq8/8ZTlZAK+LUKEQgEnbGRBz7Ua1gaHdCnbvvQJJ1Z8nXYQKuSsw8Z0zIq4nVxo92w0O8lQhV4Cx79SZ+CwrQRAOqm7QywsiV4BJ2/lOzC+zAehr1e007h3A2HNqvMUDSWK4wm7VC4aSWFNMbgqM/WaXiV6ZNpy1hfxUyAVgrXGZKHJsbLkAjH3HY+J3prxvNDbC+6obeJp7kmIzAaLn+onFz2PZLaoBiJsTwNvE2FssmGabpvSwcCNwnxnxqMHMQw4pfkf+hvid9b6sAVwPYfM5xpRDWddBo6ShcA1g0m5eXA9hZSUn3Qc0sludneXwdQDfGRHxM+ma5cbh0naD2YT7/5f8CK1MkuUmmb5b0iyV+BJnDWSbgcGlZVn1pycf+6v7p7rQ/YFITz52rKyKTv3mIQjdjb0TwDlCOlTZ6CrQnw9v98Iw7JUOAZxXQrtu+gwVdeLSIYAfldBumJI3PkLLapQFoR30RArMQYqHwGfbDY40TqcCiBaeQeCXZhNRLOjYbnVORbFZjcy0QFEAuOV0qlagwP7Qt93OvqmA4kaWtpDmy0ubTOWqsiNxnsxZyLRp4qGV6Sbh9ducG6keofjTcWt6IcxHHaa1UFUfiIJnowV9U2cmvSFh3jfdqlJg4junRPzGtOhdrlsW7ydNnWlrKgGakf8vfQtnpwrQz1hmphdSKK2dagEgSwSXBPbmjWnSbh4RwxMOhCo7FQNIzj0juLjqIRqrI3B0wkEWdyVqaOxUA2A4+7lZ9TSlJGpo7FQO0G720qqXVvXUZmhQQ2OnYoDk4xZZ1dVqKOxUDrBy3KKtuk6N9eOTO9vobIij2bi75DAyVzJHLd6N2AiOpH8IihUwp7CZiEeAzdR9seuDV+AfgUaDQAHGEp4AAAAASUVORK5CYII="/>
                         <h2>Get access to cool features</h2>
                         <p>Riot PRO allows you to get the best features of Riot, right for your community.</p>
                     </div>
@@ -71,6 +74,15 @@ export const Pro: React.FunctionComponent = () => (
                     </div>
                 </ContentOpacityLayer>
             </section>
+                <section id="get-pro" style={{ background: "linear-graident(black, white)", textAlign: 'center', padding: '100px 0' }}>
+                    <div className={css['content-download']}>
+                        <h1 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '42px' }}>Ready?</h1>
+                        <p style={{ marginBottom: '40px' }} >Support our development and get to lead your own riot.</p>
+                    </div>
+                    <div className={css.team}>
+
+                    </div>
+                </section>
         </main>
         <Footer />
     </div>

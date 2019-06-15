@@ -74,6 +74,23 @@
             color: black;
             background-color: #FBFBFB;
             border-radius: 6px;
+            z-index: 50;
+            
+            .dropdown-arrow {
+                z-index: -1;
+                position: absolute;
+                top: -8px;
+                right: 25px;
+                width: 30px;
+                height: 30px;
+                background-color: white;
+                transform: rotate(45deg);
+                border-radius: 5px;
+
+                @include media(mobile) {
+                    display: none;
+                }
+            }
 
             @include media(mobile) {
                 top: 70px;

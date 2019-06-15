@@ -11,7 +11,7 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 
 import { Error404 } from './pages/errors/404';
 // Pages
-import { Home } from './pages/Home';
+import Home from './pages/Home';
 import { Branding } from './pages/Branding';
 import { Developers } from './pages/developers/Developers';
 import { Download } from './pages/Download';

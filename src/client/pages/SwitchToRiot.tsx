@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { RouteComponentProps } from 'react-router';
 
@@ -60,6 +61,9 @@ export const SwitchToRiot: React.FunctionComponent<RouteComponentProps> = (props
     ); else return (
         <div style={{ background: "linear-gradient(#D468EE, #7B68EE)" }}>
             <ScrollToTopOnMount />
+            <Helmet>
+                <title>Riot | {t('switch.name')}</title>
+            </Helmet>
                 <main>
                 <header style={{ background: "transparent" }}>
                 <Navigation fixed={true} />
